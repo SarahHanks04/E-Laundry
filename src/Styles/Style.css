@@ -1,0 +1,4 @@
+/* General transition for smoothness */
+* {
+    transition: all 0.3s ease-in-out;
+  }

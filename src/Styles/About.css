@@ -1,0 +1,24 @@
+/* Custom fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-container {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.service-card {
+  animation: fadeIn 1s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+}
+
+.service-card:hover {
+  transform: translateY(-5px) scale(1.03);
+}

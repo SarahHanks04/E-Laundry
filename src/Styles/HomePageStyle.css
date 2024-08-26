@@ -1,0 +1,39 @@
+/* HomePage container animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.homepage-container {
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Button transitions */
+.button {
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.button:hover {
+  transform: translateY(-3px) scale(1.05);
+  background-color: #004085;
+}
+
+.schedule-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  border-color: #0056b3;
+}
+
+/* Image animation */
+.image-container img {
+  transition: transform 0.5s ease-in-out;
+}
+
+.image-container img:hover {
+  transform: scale(1.05) rotate(2deg);
+}

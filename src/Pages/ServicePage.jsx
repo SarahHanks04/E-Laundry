@@ -45,7 +45,7 @@ const ServicePage = () => {
   };
 
   return (
-    <div className=" relative flex flex-col items-center p-6">
+    <div className="relative flex flex-col items-center p-6">
       <h1 className="text-3xl font-bold mb-4 flex items-center">
         Our Services
       </h1>
@@ -56,58 +56,38 @@ const ServicePage = () => {
       <div>
         <button
           onClick={prevSlide}
-          className="absolute right-[25%] top-[67px] p-2 w-8 h-8 hover:bg-teal-700 text-gray-600 rounded-full flex justify-center items-center"
+          className="absolute right-[20%] top-20 transform -translate-y-1/2 p-2 w-8 h-8 hover:bg-teal-700 text-gray-600 rounded-full flex justify-center items-center border-[1px] border-gray-500"
         >
           <span className="text-lg">&#8592;</span>
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-[20%] top-[67px] p-2 w-8 h-8 hover:bg-teal-700 text-gray-600 rounded-full flex justify-center items-center"
+          className="absolute right-[10%] top-20 transform -translate-y-1/2 p-2 w-8 h-8 hover:bg-teal-700 text-gray-600 rounded-full flex justify-center items-center border-[1px] border-gray-500"
         >
           <span className="text-lg">&#8594;</span>
         </button>
       </div>
 
-      <div className="flex justify-center items-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* First Card */}
-          <div className="w-[60%] h-[30rem] p-6 bg-teal-50 rounded-lg shadow-lg transition-transform duration-500 ease-in-out transform hover:scale-105">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {services.map((service, index) => (
+          <div
+            key={service.id}
+            className="w-full h-[30rem] p-6 bg-teal-50 rounded-lg shadow-lg transition-transform duration-500 ease-in-out transform hover:scale-105"
+          >
             <img
-              src={services[currentIndex].image}
-              alt={services[currentIndex].title}
+              src={service.image}
+              alt={service.title}
               className="w-full h-[18rem] object-cover rounded-md mb-4"
             />
-            <h2 className="text-xl font-semibold">
-              {services[currentIndex].title}
-            </h2>
-            <div>
+            <h2 className="text-xl font-semibold">{service.title}</h2>
             <p className="mt-2 mb-6 text-sm text-gray-600">
-              {services[currentIndex].description}
-            </p>
-            <Link to="/" className="text-black">
-              Learn More <span> &#8594;</span>
-            </Link>
-            </div>
-          </div>
-
-          {/* Second Card */}
-          <div className="w-[60%] h-[29rem] p-6 bg-teal-50 rounded-lg shadow-lg transition-transform duration-500 ease-in-out transform hover:scale-105">
-            <img
-              src={services[(currentIndex + 1) % services.length].image}
-              alt={services[(currentIndex + 1) % services.length].title}
-              className="w-full h-[18rem] object-cover rounded-md mb-4"
-            />
-            <h2 className="text-xl font-semibold">
-              {services[(currentIndex + 1) % services.length].title}
-            </h2>
-            <p className="mt-2 mb-6 text-sm text-gray-600">
-              {services[(currentIndex + 1) % services.length].description}
+              {service.description}
             </p>
             <Link to="/" className="text-black">
               Learn More <span> &#8594;</span>
             </Link>
           </div>
-        </div>
+        ))}
       </div>
 
       <button className="mt-8 bg-blue-950 text-white px-6 py-2 rounded-full">

@@ -66,7 +66,7 @@ const Navbar = () => {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  isActive ? "text-blue-950 font-bold" : "text-black"
+                  isActive ? "text-red-700 font-bold" : "text-black"
                 }
               >
                 Home
@@ -76,7 +76,7 @@ const Navbar = () => {
               <NavLink
                 to="/services"
                 className={({ isActive }) =>
-                  isActive ? "text-blue-950 font-bold" : "text-black"
+                  isActive ? "text-red-700 font-bold" : "text-black"
                 }
               >
                 Services
@@ -86,7 +86,7 @@ const Navbar = () => {
               <NavLink
                 to="/about"
                 className={({ isActive }) =>
-                  isActive ? "text-blue-950 font-bold" : "text-black"
+                  isActive ? "text-red-700 font-bold" : "text-black"
                 }
               >
                 About
@@ -96,7 +96,7 @@ const Navbar = () => {
               <NavLink
                 to="/prices"
                 className={({ isActive }) =>
-                  isActive ? "text-blue-950 font-bold" : "text-black"
+                  isActive ? "text-red-700 font-bold" : "text-black"
                 }
               >
                 Prices
@@ -106,7 +106,7 @@ const Navbar = () => {
               <NavLink
                 to="/booking"
                 className={({ isActive }) =>
-                  isActive ? "text-blue-950 font-bold" : "text-black"
+                  isActive ? "text-red-700 font-bold" : "text-black"
                 }
               >
                 Booking
@@ -128,7 +128,7 @@ const Navbar = () => {
                 to="/"
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
-                  isActive ? "text-blue-950 font-bold" : "text-black"
+                  isActive ? "text-red-700 font-bold" : "text-black"
                 }
               >
                 Home
@@ -139,7 +139,7 @@ const Navbar = () => {
                 to="/services"
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
-                  isActive ? "text-blue-950 font-bold" : "text-black"
+                  isActive ? "text-red-700 font-bold" : "text-black"
                 }
               >
                 Services
@@ -150,7 +150,7 @@ const Navbar = () => {
                 to="/about"
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
-                  isActive ? "text-blue-950 font-bold" : "text-black"
+                  isActive ? "text-red-700 font-bold" : "text-black"
                 }
               >
                 About
@@ -161,7 +161,7 @@ const Navbar = () => {
                 to="/prices"
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
-                  isActive ? "text-blue-950 font-bold" : "text-black"
+                  isActive ? "text-red-700 font-bold" : "text-black"
                 }
               >
                 Prices
@@ -172,7 +172,7 @@ const Navbar = () => {
                 to="/booking"
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
-                  isActive ? "text-blue-950 font-bold" : "text-black"
+                  isActive ? "text-red-700 font-bold" : "text-black"
                 }
               >
                 Booking

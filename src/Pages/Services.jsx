@@ -3,7 +3,7 @@ import Service3 from "../assets/Service3.png";
 import "../Styles/HomepageStyle.css";
 import { NavLink } from "react-router-dom";
 
-const HomePage = () => {
+const Service = () => {
   return (
     <div className="homepage-container flex flex-col md:flex-row items-center p-8 bg-white">
       <div className="image-container md:w-1/2 flex justify-center mt-8 md:mt-0">
@@ -17,7 +17,7 @@ const HomePage = () => {
       </div>
 
       <div className="md:w-1/2">
-        <h1 className="text-4xl font-bold text-navy">
+        <h1 className="text-4xl font-bold text-blue-950">
           Get the <br /> <span> VIP Treatment</span>
         </h1>
         <p className="mt-4 text-lg text-gray-600">
@@ -31,4 +31,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default Service;

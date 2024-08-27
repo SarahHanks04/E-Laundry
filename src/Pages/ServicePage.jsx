@@ -55,34 +55,53 @@ const ServicePage = () => {
       <div>
         <button
           onClick={prevSlide}
-          className="absolute right-[30%] border-2 rounded-full top-36 text-xl"
+          className="absolute right-[30%] top-36 p-2 w-8 h-8 hover:bg-teal-700 text-gray-600 rounded-full flex justify-center items-center"
         >
-          <span className="w-[4px] h-[4px]">&#8592;</span>
+          <span className="text-lg">&#8592;</span>
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-[20%] top-36 text-xl"
+          className="absolute right-[20%] top-36 p-2 w-8 h-8 hover:bg-teal-700 text-gray-600 rounded-full flex justify-center items-center"
         >
-          <span className="w-[14px] h-[12px] border-2 rounded-full">&#8594;</span>
+          <span className="text-lg">&#8594;</span>
         </button>
       </div>
 
       <div className="relative flex justify-center items-center">
-        <div className="w-full md:w-1/2 h-64 p-6 bg-blue-100 rounded-lg shadow-lg transition-transform duration-500 ease-in-out transform hover:scale-105">
-          <img
-            src={services[currentIndex].image}
-            alt={services[currentIndex].title}
-            className="w-full h-32 object-cover rounded-md mb-4"
-          />
-          <h2 className="text-xl font-semibold">
-            {services[currentIndex].title}
-          </h2>
-          <p className="mt-2 text-sm text-gray-600">
-            {services[currentIndex].description}
-          </p>
-          <button className="mt-4 text-blue-600 hover:underline">
-            Learn More &#8594;
-          </button>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="w-full h-64 p-6 bg-blue-100 rounded-lg shadow-lg transition-transform duration-500 ease-in-out transform hover:scale-105">
+            <img
+              src={services[currentIndex].image}
+              alt={services[currentIndex].title}
+              className="w-full h-32 object-cover rounded-md mb-4"
+            />
+            <h2 className="text-xl font-semibold">
+              {services[currentIndex].title}
+            </h2>
+            <p className="mt-2 text-sm text-gray-600">
+              {services[currentIndex].description}
+            </p>
+            <button className="mt-4 text-black hover:underline">
+              Learn More &#8594;
+            </button>
+          </div>
+
+          <div className="w-full h-64 p-6 bg-blue-100 rounded-lg shadow-lg transition-transform duration-500 ease-in-out transform hover:scale-105">
+            <img
+              src={services[(currentIndex + 1) % services.length].image}
+              alt={services[(currentIndex + 1) % services.length].title}
+              className="w-full h-32 object-cover rounded-md mb-4"
+            />
+            <h2 className="text-xl font-semibold">
+              {services[(currentIndex + 1) % services.length].title}
+            </h2>
+            <p className="mt-2 text-sm text-gray-600">
+              {services[(currentIndex + 1) % services.length].description}
+            </p>
+            <button className="mt-4 text-black hover:underline">
+              Learn More &#8594;
+            </button>
+          </div>
         </div>
       </div>
 

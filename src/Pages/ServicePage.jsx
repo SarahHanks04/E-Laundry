@@ -3,7 +3,7 @@ import Service1 from "../assets/Service1 (2).png";
 import Service2 from "../assets/Service2 (2).png";
 import Service3 from "../assets/Service3.png";
 import "../Styles/Services.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const services = [
   {
@@ -43,6 +43,8 @@ const ServicePage = () => {
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
   };
+
+  const navigate = useNavigate();
 
   return (
     <div className="relative flex flex-col items-center p-6">
@@ -90,8 +92,14 @@ const ServicePage = () => {
         ))}
       </div>
 
-      <button className="mt-8 bg-blue-950 px-6 py-2 rounded-full">
+      {/* <button className="mt-8 bg-blue-950 px-6 py-2 rounded-full">
         <Link to="/service" className="text-white"> View All Services</Link>
+      </button> */}
+      <button
+        onClick={() => navigate("/service")} // Add this line
+        className="mt-8 bg-blue-950 text-white px-6 py-2 rounded-full"
+      >
+        View All Services
       </button>
     </div>
   );

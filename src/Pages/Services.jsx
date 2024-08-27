@@ -24,8 +24,9 @@ const Service = () => {
           Our team consists of skilled professionals who are passionate about what they do. They handle your garments with the utmost care and attention, ensuring thorough cleaning, ironing and folding. With their expertise, you can trust that your clothes will be handled professionally and returned returned to you in pristine condition. 
         </p>
         <div className="mt-8 flex space-x-4 bg-blue-950 text-white">
-          <NavLink>Become VIP</NavLink>
+          <NavLink to="/become-vip">Become VIP</NavLink>
         </div>
+
       </div>
     </div>
   );

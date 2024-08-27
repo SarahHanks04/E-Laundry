@@ -1,7 +1,7 @@
 import React from 'react';
 import "../Styles/About.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHandshake, faTruck, faTruckFast, faUserTie } from '@fortawesome/free-solid-svg-icons';
+import { faHandshake, faTruckFast, faUserTie } from '@fortawesome/free-solid-svg-icons';
 
 const AboutPage = () => {
   return (

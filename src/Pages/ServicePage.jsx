@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import Service1 from "../assets/Service1.png";
-import Service2 from "../assets/Service2.png";
+import Service1 from "../assets/Service1 (2).png";
+import Service2 from "../assets/Service2 (2).png";
 import Service3 from "../assets/Service3.png";
-import "../Styles/ServicePage";
+import "../Styles/Services.css";
 
 const services = [
   {
@@ -49,20 +47,27 @@ const ServicePage = () => {
     <div className="flex flex-col items-center p-6">
       <h1 className="text-3xl font-bold mb-4 flex items-center">
         Our Services
-        <FontAwesomeIcon icon={faArrowRight} className="ml-2 text-lg" />
       </h1>
       <p className="text-lg text-center mb-8">
         We are one of the fastest laundromats in Bangkok.
       </p>
 
-      <div className="relative flex justify-center items-center">
+      <div>
         <button
           onClick={prevSlide}
-          className="absolute left-0 text-2xl text-green-600"
+          className="absolute right-[30%] border-2 rounded-full top-36 text-xl"
         >
-          <FontAwesomeIcon icon={faArrowLeft} />
+          <span className="w-[4px] h-[4px]">&#8592;</span>
         </button>
+        <button
+          onClick={nextSlide}
+          className="absolute right-[20%] top-36 text-xl"
+        >
+          <span className="w-[14px] h-[12px] border-2 rounded-full">&#8594;</span>
+        </button>
+      </div>
 
+      <div className="relative flex justify-center items-center">
         <div className="w-full md:w-1/2 h-64 p-6 bg-blue-100 rounded-lg shadow-lg transition-transform duration-500 ease-in-out transform hover:scale-105">
           <img
             src={services[currentIndex].image}
@@ -76,16 +81,9 @@ const ServicePage = () => {
             {services[currentIndex].description}
           </p>
           <button className="mt-4 text-blue-600 hover:underline">
-            Learn More &rarr;
+            Learn More &#8594;
           </button>
         </div>
-
-        <button
-          onClick={nextSlide}
-          className="absolute right-0 text-2xl text-green-600"
-        >
-          <FontAwesomeIcon icon={faArrowRight} />
-        </button>
       </div>
 
       <button className="mt-8 bg-blue-950 text-white px-6 py-2 rounded-full">

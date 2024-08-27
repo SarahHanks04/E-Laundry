@@ -9,12 +9,13 @@ import {
 
 const AboutPage = () => {
   return (
-    <section className="bg-gray-100 py-10 px-6">
-      <div className="text-center mb-12">
+    <section className="py-8 px-6">
+      <div className="text-center mb-10">
         <h1 className="text-4xl font-bold text-navy mb-4">
-          Welcome to That Laundry Shop!
+          Welcome to <br /> 
+          <span className="text-teal-500">That Laundry Shop!</span>
         </h1>
-        <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+        <p className="text-md text-gray-700 max-w-2xl mx-auto">
           Since 2017, we have been dedicated to providing top-notch laundry
           services in Bangkok. What started with a small 36sqm shop in 15
           Sukhumvit Residences has now grown into a trusted name with four

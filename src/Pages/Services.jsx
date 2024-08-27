@@ -1,9 +1,10 @@
 import React from "react";
 import Service3 from "../assets/Service3.png";
 import "../Styles/HomepageStyle.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Service = () => {
+    const navigate = useNavigate();
   return (
     <div className="homepage-container flex flex-col md:flex-row items-center p-8 bg-white">
       <div className="image-container md:w-1/2 flex justify-center mt-8 md:mt-0">

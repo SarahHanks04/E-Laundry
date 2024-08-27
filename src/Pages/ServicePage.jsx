@@ -45,6 +45,9 @@ const ServicePage = () => {
   };
 
   const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/service"); // navigate to /become-vip page
+  };
 
   return (
     <div className="relative flex flex-col items-center p-6">
@@ -92,11 +95,8 @@ const ServicePage = () => {
         ))}
       </div>
 
-      {/* <button className="mt-8 bg-blue-950 px-6 py-2 rounded-full">
-        <Link to="/service" className="text-white"> View All Services</Link>
-      </button> */}
       <button
-        onClick={() => navigate("/service")} // Add this line
+        onClick={handleClick} 
         className="mt-8 bg-blue-950 text-white px-6 py-2 rounded-full"
       >
         View All Services

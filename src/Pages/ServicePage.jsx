@@ -46,7 +46,7 @@ const ServicePage = () => {
 
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate("/service"); // navigate to /become-vip page
+    navigate("/service");
   };
 
   return (

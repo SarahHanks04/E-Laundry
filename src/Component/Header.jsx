@@ -28,14 +28,14 @@ const Navbar = () => {
   return (
     <nav>
       {/* Top Bar */}
-      <div className="text-white bg-blue-950 py-2">
+      <div className="text-white bg-blue-950 py-2 hidden md:block">
         <p className="text-center">+66 94 691 6668</p>
       </div>
 
       {/* Main Navbar */}
       <main className="bg-navy px-6 flex justify-center items-center">
         {/* Main Items Container */}
-        <div className="flex items-center space-x-10">
+        <div className=" hidden md:flex items-center space-x-10">
           {/* Home Link */}
           <NavLink
             to="/"
@@ -91,29 +91,42 @@ const Navbar = () => {
         </div>
 
         {/* Contact Button */}
-        <button onClick={() => navigate("/contact-form")} className="bg-blue-950 text-white px-4 py-1 rounded-[16px] ml-28">
+        <button
+          onClick={() => navigate("/contact-form")}
+          className="hidden md:block bg-blue-950 text-white px-4 py-1 rounded-[16px] ml-28"
+        >
           Contact Us
         </button>
 
         {/* Mobile Toggle Button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="block md:hidden text-white ml-4 focus:outline-none"
-        >
-          <svg
-            className="h-6 w-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+
+        {/* Logo */}
+        <div className="flex justify-between">
+          <img
+            src={LaundryLogo}
+            alt="Laundry logo"
+            className="lg:hidden h-10 mr-28"
+          />
+          
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="block md:hidden text-black focus:outline-none ml-2"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
-            />
-          </svg>
-        </button>
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+              />
+            </svg>
+          </button>
+        </div>
       </main>
 
       {/* Mobile Menu */}
@@ -176,7 +189,10 @@ const Navbar = () => {
               </NavLink>
             </li>
           </ul>
-          <button onClick={() => navigate("/contact-form")} className="bg-blue-950 text-white px-4 py-2 rounded-[16px] w-full mt-4">
+          <button
+            onClick={() => navigate("/contact-form")}
+            className="bg-blue-950 text-white px-4 py-2 rounded-[16px] w-full mt-4"
+          >
             Contact Us
           </button>
         </div>

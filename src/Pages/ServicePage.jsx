@@ -31,18 +31,37 @@ const services = [
 
 const ServicePage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  // const [isTransitioning, setIsTransitioning] = useState(false);
 
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? services.length - 1 : currentIndex - 1;
     setCurrentIndex(newIndex);
   };
+  // const prevSlide = () => {
+  //   setIsTransitioning(true);
+  //   setTimeout(() => {
+  //     const isFirstSlide = currentIndex === 0;
+  //     const newIndex = isFirstSlide ? services.length - 1 : currentIndex - 1;
+  //     setCurrentIndex(newIndex);
+  //     setIsTransitioning(false);
+  //   }, 300); // Duration matches the transition duration
+  // };
 
   const nextSlide = () => {
     const isLastSlide = currentIndex === services.length - 1;
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
   };
+  // const nextSlide = () => {
+  //   setIsTransitioning(true);
+  //   setTimeout(() => {
+  //     const isLastSlide = currentIndex === services.length - 1;
+  //     const newIndex = isLastSlide ? 0 : currentIndex + 1;
+  //     setCurrentIndex(newIndex);
+  //     setIsTransitioning(false);
+  //   }, 300); // Duration matches the transition duration
+  // };
 
   const navigate = useNavigate();
   const handleClick = () => {
@@ -51,7 +70,7 @@ const ServicePage = () => {
 
   return (
     <div className="relative flex flex-col items-center p-6">
-      <h1 className="text-3xl font-bold mb-4 flex items-center">
+      <h1 className="text-3xl font-bold mb-4 flex items-center sm:text-3xl">
         Our Services
       </h1>
       <p className="text-lg text-center mb-8">

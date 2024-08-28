@@ -10,6 +10,7 @@ import AboutPage from "./Pages/AboutPage";
 import ServicePage from "./Pages/ServicePage";
 import Service from "./Pages/Services";
 import ContactForm from "./Pages/Contact";
+// import TestimonialPage from "./Pages/TestimonialPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/services" element={<ServicePage />} />
         <Route path="/service" element={<Service />} />
         <Route path="/contact-form" element={<ContactForm />} />
+        {/* <Route path="/" element={<TestimonialPage />} /> */}
       </Routes>
     </>
   );

@@ -1,6 +1,7 @@
 import { faEnvelope, faPhone, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -25,6 +26,8 @@ const ContactForm = () => {
     // Clear form
     setFormData({ name: "", phone: "", email: "", message: "" });
   };
+
+  const navigate = useNavigate();
 
   return (
     <div className="flex justify-center">
@@ -139,6 +142,14 @@ const ContactForm = () => {
             </div>
           </div>
         </form>
+        <div className="text-center text-[8px]">
+          <button
+            onClick={() => navigate("/")}
+            className="mt-6 md:mt-8 bg-blue-950 text-white px-2 md:px-6 md:py-2 rounded-full"
+          >
+            Go Back To Home
+          </button>
+        </div>
       </div>
     </div>
   );

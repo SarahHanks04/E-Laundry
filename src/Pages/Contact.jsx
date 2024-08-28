@@ -30,8 +30,8 @@ const ContactForm = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex justify-center">
-      <div className="bg-teal-600 rounded-lg shadow-lg p-6 w-full max-w-md md:max-w-2xl lg:max-w-4xl mx-4">
+    <div className="w-full h-full min-h-screen flex justify-center">
+      <div className="bg-teal-600 rounded-lg shadow-lg p-6 w-full max-w-4xl mx-4">
         <h2 className="text-white text-3xl font-bold mb-6 text-center">
           Contact Us
         </h2>

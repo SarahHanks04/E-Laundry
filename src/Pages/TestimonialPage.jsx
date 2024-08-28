@@ -20,13 +20,13 @@ const TestimonialPage = () => {
       review:
         "This service is ridiculously amazing. Being a digital nomad that doesn't have to worry about washing clothes, it gives more time to see Chiang Mai & also have more time to focus on work.",
       name: "Julita Czyzewska",
-      ratings: 5,
+      ratings: 4,
       image: face15,
     },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const navigate = useNavigate();
+
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? Testimonials.length - 1 : currentIndex - 1;
@@ -95,10 +95,13 @@ const TestimonialPage = () => {
           </div>
         ))}
 
-        
+        <Link
+          to="/"
+          className="block mx-auto mt-8 mb-16 py-2 px-4 text-red-200"
+        >
+          Go back to Home
+        </Link>
       </main>
-      
-      <Link to="/" className="mx-[32rem] my-[6rem]">Go Back to Home</Link>
     </section>
   );
 };

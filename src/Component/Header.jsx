@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import LaundryLogo from "../assets/LaundryLogo.png";
 import LoadingImage from "../assets/LoadingImage.png";
 import "../Styles/Loading.css";
@@ -7,6 +7,7 @@ import "../Styles/Loading.css";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -90,7 +91,7 @@ const Navbar = () => {
         </div>
 
         {/* Contact Button */}
-        <button className="bg-blue-950 text-white px-4 py-1 rounded-[16px] ml-28">
+        <button onClick={() => navigate("/contact-form")} className="bg-blue-950 text-white px-4 py-1 rounded-[16px] ml-28">
           Contact Us
         </button>
 
@@ -175,7 +176,7 @@ const Navbar = () => {
               </NavLink>
             </li>
           </ul>
-          <button className="bg-blue-950 text-white px-4 py-2 rounded-[16px] w-full mt-4">
+          <button onClick={() => navigate("/contact-form")} className="bg-blue-950 text-white px-4 py-2 rounded-[16px] w-full mt-4">
             Contact Us
           </button>
         </div>

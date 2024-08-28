@@ -9,6 +9,7 @@ import Navbar from "./Component/Header";
 import AboutPage from "./Pages/AboutPage";
 import ServicePage from "./Pages/ServicePage";
 import Service from "./Pages/Services";
+import ContactForm from "./Pages/Contact";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicePage />} />
         <Route path="/service" element={<Service />} />
+        <Route path="/contact-form" element={<ContactForm />} />
       </Routes>
     </>
   );

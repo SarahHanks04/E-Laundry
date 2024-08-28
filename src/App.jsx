@@ -11,6 +11,7 @@ import ServicePage from "./Pages/ServicePage";
 import Service from "./Pages/Services";
 import ContactForm from "./Pages/Contact";
 import TestimonialPage from "./Pages/TestimonialPage";
+import SubmitReviewPage from "./Pages/SubmitReviewPage";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/service" element={<Service />} />
         <Route path="/contact-form" element={<ContactForm />} />
         <Route path="/reviews" element={<TestimonialPage />} />
+        <Route path="/submit-review" element={<SubmitReviewPage />} />
       </Routes>
     </>
   );

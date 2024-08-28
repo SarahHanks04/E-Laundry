@@ -1,13 +1,125 @@
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+// import { faStar } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import React, { useState } from "react";
+// import "../Styles/Testimonial.css";
+// import face2 from "../assets/face2 - Copy.jpg";
+// import face15 from "../assets/face15.jpg";
+// import { Link } from "react-router-dom";
+
+// const TestimonialPage = () => {
+//   const Testimonials = [
+//     {
+//       review:
+//         "This service is ridiculously amazing. Being a digital nomad that doesn't have to worry about washing clothes, it gives more time to see Chiang Mai & also have more time to focus on work.",
+//       name: "Julita Czyzewska",
+//       ratings: 5,
+//       image: face2,
+//     },
+
+//     {
+//       review:
+//         "This service is ridiculously amazing. Being a digital nomad that doesn't have to worry about washing clothes, it gives more time to see Chiang Mai & also have more time to focus on work.",
+//       name: "Julita Czyzewska",
+//       ratings: 4,
+//       image: face15,
+//     },
+//   ];
+
+//   const [currentIndex, setCurrentIndex] = useState(0);
+
+//   const prevSlide = () => {
+//     const isFirstSlide = currentIndex === 0;
+//     const newIndex = isFirstSlide ? Testimonials.length - 1 : currentIndex - 1;
+//     setCurrentIndex(newIndex);
+//   };
+
+//   const nextSlide = () => {
+//     const isLastSlide = currentIndex === Testimonials.length - 1;
+//     const newIndex = isLastSlide ? 0 : currentIndex + 1;
+//     setCurrentIndex(newIndex);
+//   };
+//   return (
+//     <section className="min-h-screen bg-teal-50 p-4 overflow-x-hidden">
+//       {/* TITLE */}
+//       <div className=" relative text-center text-lg font-medium mt-4">
+//         <h1>
+//           What our <br /> Customer says
+//         </h1>
+//       </div>
+
+//       <div>
+//         <button
+//           onClick={prevSlide}
+//           className="absolute right-[20%] top-[12.8rem] transform -translate-y-1/2 p-2 w-8 h-8 hover:bg-teal-700 text-gray-600 rounded-full flex justify-center items-center border-[1px] border-gray-500"
+//         >
+//           <span className="text-lg">&#8592;</span>
+//         </button>
+//         <button
+//           onClick={nextSlide}
+//           className="absolute right-[10%] top-[12.8rem] transform -translate-y-1/2 p-2 w-8 h-8 hover:bg-teal-700 text-gray-600 rounded-full flex justify-center items-center border-[1px] border-gray-500"
+//         >
+//           <span className="text-lg">&#8594;</span>
+//         </button>
+//       </div>
+
+//       {/*   MAPPING THE TESTIMONIALS   */}
+//       <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mx-5 mt-14 justify-center">
+//         {Testimonials.map((testimonial, index) => (
+//           <div
+//             key={index}
+//             className="mx-5 bg-white p-6 rounded-lg shadow-2xl max-w-full transition-transform duration-300 transform hover:scale-95 testimonial-card"
+//           >
+//             <div className="flex items-center mb-4">
+//                 {/* IMAGE */}
+//               <img
+//                 src={testimonial.image}
+//                 alt={testimonial.name}
+//                 className="w-12 h-12 rounded-full object-cover mr-4"
+//               />
+//               <div>
+//                     {/* NAME */}
+//                 <p className="text-gray-700 text-lg font-bold">
+//                   {testimonial.name}
+//                 </p>
+//                     {/* RATING */}
+//                 <div className="mt-1">
+//                   {[...Array(5)].map((_, i) => (
+//                     <FontAwesomeIcon
+//                       key={i}
+//                       icon={faStar}
+//                       className="pr-1"
+//                       color={i < testimonial.ratings ? "#FDBF17" : "#D3D3D3"}
+//                     />
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+//             <p className="review text-gray-700 text-sm">{testimonial.review}</p>
+//           </div>
+//         ))}
+
+//         <Link
+//           to="/"
+//           className="block mx-auto mt-8 mb-16 py-2 px-4 text-red-300 text-sm font-serif"
+//         >
+//           Go back to Home
+//         </Link>
+//       </main>
+//     </section>
+//   );
+// };
+
+// export default TestimonialPage;
+
+import { faStar, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
-import "../Styles/Testimonial.css";
-import face2 from "../assets/face2 - Copy.jpg";
-import face15 from "../assets/face15.jpg";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import face2 from "../assets/face2 - Copy.jpg"; // Replace with your actual path
+import face15 from "../assets/face15.jpg"; // Replace with your actual path
 
 const TestimonialPage = () => {
-  const Testimonials = [
+  const defaultTestimonials = [
     {
       review:
         "This service is ridiculously amazing. Being a digital nomad that doesn't have to worry about washing clothes, it gives more time to see Chiang Mai & also have more time to focus on work.",
@@ -15,7 +127,6 @@ const TestimonialPage = () => {
       ratings: 5,
       image: face2,
     },
-
     {
       review:
         "This service is ridiculously amazing. Being a digital nomad that doesn't have to worry about washing clothes, it gives more time to see Chiang Mai & also have more time to focus on work.",
@@ -25,63 +136,52 @@ const TestimonialPage = () => {
     },
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [testimonials, setTestimonials] = useState(defaultTestimonials);
 
-  const prevSlide = () => {
-    const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? Testimonials.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
+  useEffect(() => {
+    const savedReviews = JSON.parse(localStorage.getItem("reviews")) || [];
+    if (savedReviews.length > 0) {
+      setTestimonials((prev) => [...prev, ...savedReviews]);
+    }
+  }, []);
+
+  const handleDelete = (indexToDelete) => {
+    // Create a new array excluding the review at indexToDelete
+    const updatedTestimonials = testimonials.filter(
+      (_, index) => index !== indexToDelete
+    );
+
+    // Update state
+    setTestimonials(updatedTestimonials);
+
+    // Update local storage
+    const updatedLocalReviews = updatedTestimonials.slice(defaultTestimonials.length); // Only save the ones added by users
+    localStorage.setItem("reviews", JSON.stringify(updatedLocalReviews));
   };
 
-  const nextSlide = () => {
-    const isLastSlide = currentIndex === Testimonials.length - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
-  };
   return (
     <section className="min-h-screen bg-teal-50 p-4 overflow-x-hidden">
-      {/* TITLE */}
-      <div className=" relative text-center text-lg font-medium mt-4">
+      <div className="relative text-center text-lg font-medium mt-4">
         <h1>
-          What our <br /> Customer says
+          What our <br /> Customers Say
         </h1>
       </div>
-
-      <div>
-        <button
-          onClick={prevSlide}
-          className="absolute right-[20%] top-[12.8rem] transform -translate-y-1/2 p-2 w-8 h-8 hover:bg-teal-700 text-gray-600 rounded-full flex justify-center items-center border-[1px] border-gray-500"
-        >
-          <span className="text-lg">&#8592;</span>
-        </button>
-        <button
-          onClick={nextSlide}
-          className="absolute right-[10%] top-[12.8rem] transform -translate-y-1/2 p-2 w-8 h-8 hover:bg-teal-700 text-gray-600 rounded-full flex justify-center items-center border-[1px] border-gray-500"
-        >
-          <span className="text-lg">&#8594;</span>
-        </button>
-      </div>
-
-      {/*   MAPPING THE TESTIMONIALS   */}
       <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mx-5 mt-14 justify-center">
-        {Testimonials.map((testimonial, index) => (
+        {testimonials.map((testimonial, index) => (
           <div
             key={index}
             className="mx-5 bg-white p-6 rounded-lg shadow-2xl max-w-full transition-transform duration-300 transform hover:scale-95 testimonial-card"
           >
             <div className="flex items-center mb-4">
-                {/* IMAGE */}
               <img
-                src={testimonial.image}
+                src={testimonial.image || ""} // Use a default image if needed
                 alt={testimonial.name}
                 className="w-12 h-12 rounded-full object-cover mr-4"
               />
               <div>
-                    {/* NAME */}
                 <p className="text-gray-700 text-lg font-bold">
                   {testimonial.name}
                 </p>
-                    {/* RATING */}
                 <div className="mt-1">
                   {[...Array(5)].map((_, i) => (
                     <FontAwesomeIcon
@@ -95,16 +195,31 @@ const TestimonialPage = () => {
               </div>
             </div>
             <p className="review text-gray-700 text-sm">{testimonial.review}</p>
+            {/* DELETE BUTTON */}
+            {/* <button
+              className="absolute top-2 right-2 text-red-500 hover:text-red-700"
+              onClick={() => handleDelete(index)}
+            >
+              <FontAwesomeIcon icon={faTrash} />
+            </button> */}
           </div>
         ))}
-
-        <Link
-          to="/"
-          className="block mx-auto mt-8 mb-16 py-2 px-4 text-red-300 text-sm font-serif"
-        >
-          Go back to Home
-        </Link>
       </main>
+
+      <Link
+        to="/submit-review"
+        className="block text-center text-red-600 font-bold mt-10 hover:underline"
+      >
+        Write a Review
+      </Link>
+
+      <Link
+        to="/"
+        className="block text-center text-teal-600 font-serif text-sm mt-10 hover:underline"
+      >
+        Go Back to Home
+      </Link>
+      
     </section>
   );
 };

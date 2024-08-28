@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import "../Styles/Testimonial.css";
 import face2 from "../assets/face2 - Copy.jpg";
 import face15 from "../assets/face15.jpg";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const TestimonialPage = () => {
   const Testimonials = [
@@ -70,15 +70,18 @@ const TestimonialPage = () => {
             className="mx-5 bg-white p-6 rounded-lg shadow-2xl max-w-full transition-transform duration-300 transform hover:scale-95 testimonial-card"
           >
             <div className="flex items-center mb-4">
+                {/* IMAGE */}
               <img
                 src={testimonial.image}
                 alt={testimonial.name}
                 className="w-12 h-12 rounded-full object-cover mr-4"
               />
               <div>
+                    {/* NAME */}
                 <p className="text-gray-700 text-lg font-bold">
                   {testimonial.name}
                 </p>
+                    {/* RATING */}
                 <div className="mt-1">
                   {[...Array(5)].map((_, i) => (
                     <FontAwesomeIcon
@@ -97,7 +100,7 @@ const TestimonialPage = () => {
 
         <Link
           to="/"
-          className="block mx-auto mt-8 mb-16 py-2 px-4 text-red-200"
+          className="block mx-auto mt-8 mb-16 py-2 px-4 text-red-300 text-sm font-serif"
         >
           Go back to Home
         </Link>

@@ -11,7 +11,7 @@ const TestimonialPage = () => {
       ratings: 5,
       icon: "<FontAwesomeIcon icon={faStar} />",
     },
-    // 2
+    
     {
       review:
         "This service is ridiculously amazing. Being a digital nomad that doesn't have to worry about washing clothes, it gives more time to see Chiang Mai & also have more time to focus on work.",
@@ -34,18 +34,10 @@ const TestimonialPage = () => {
     setCurrentIndex(newIndex);
   };
   return (
-    <section className="min-h-screen bg-gray-100 p-4 overflow-x-hidden mt-[10rem]">
-      {/* THE TITLE & HEADING */}
-      {/* <div className="mx-16 mt-10">
-        <ul className="list-disc marker:text-[#FDBF17] text-gray-500">
-          <li>Testimonial</li>
-        </ul>
-      </div> */}
-      {/*  UNDERLINE  */}
-      {/* <div className="w-[100%] h-[1px] bg-gray-400 mx-3 my-4 pr-5"></div> */}
+    <section className="min-h-screen bg-teal-50 p-4 overflow-x-hidden">
 
       {/* TITLE */}
-      <div className=" relative text-center text-4xl font-semibold mt-8">
+      <div className=" relative text-center text-lg font-medium mt-4">
         <h1>
           What our <br /> Customer says
         </h1>
@@ -54,13 +46,13 @@ const TestimonialPage = () => {
       <div>
         <button
           onClick={prevSlide}
-          className="absolute right-[20%] top-20 transform -translate-y-1/2 p-2 w-8 h-8 hover:bg-teal-700 text-gray-600 rounded-full flex justify-center items-center border-[1px] border-gray-500"
+          className="absolute right-[20%] top-[12.8rem] transform -translate-y-1/2 p-2 w-8 h-8 hover:bg-teal-700 text-gray-600 rounded-full flex justify-center items-center border-[1px] border-gray-500"
         >
           <span className="text-lg">&#8592;</span>
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-[10%] top-20 transform -translate-y-1/2 p-2 w-8 h-8 hover:bg-teal-700 text-gray-600 rounded-full flex justify-center items-center border-[1px] border-gray-500"
+          className="absolute right-[10%] top-[12.8rem] transform -translate-y-1/2 p-2 w-8 h-8 hover:bg-teal-700 text-gray-600 rounded-full flex justify-center items-center border-[1px] border-gray-500"
         >
           <span className="text-lg">&#8594;</span>
         </button>

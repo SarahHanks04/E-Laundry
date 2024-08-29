@@ -107,7 +107,8 @@ const SubmitReviewPage = ({ onNewReview }) => {
           type="submit"
           className="w-full bg-teal-600 text-white py-2 px-4 rounded-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-600"
         >
-          <Link type="/reviews">Submit review</Link>
+          {/* <Link type="/reviews">Submit review</Link> */}
+          Submit Reviews
         </button>
 
         <Link

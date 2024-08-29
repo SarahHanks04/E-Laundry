@@ -7,6 +7,7 @@ const SubmitReviewPage = ({ onNewReview }) => {
   const [name, setName] = useState("");
   const [ratings, setRatings] = useState(0);
   const [review, setReview] = useState("");
+  
 
   const navigate = useNavigate();
 
@@ -24,6 +25,8 @@ const SubmitReviewPage = ({ onNewReview }) => {
       ratings,
     };
 
+    console.log("Submitting review:", newReview);
+
     const savedReviews = JSON.parse(localStorage.getItem("reviews")) || [];
     savedReviews.push(newReview);
     localStorage.setItem("reviews", JSON.stringify(savedReviews));
@@ -34,12 +37,12 @@ const SubmitReviewPage = ({ onNewReview }) => {
     setReview("");
     setRatings(0);
 
-    // Navigate to the reviews page after form submission
+    
     navigate("/reviews");
   };
 
   return (
-    <section className=" flex justify-center items-center min-h-screen bg-teal-50 p-6">
+    <section className="w-screen flex justify-center items-center min-h-screen bg-teal-50">
       <form
         onSubmit={handleSubmit}
         className="bg-white p-6 rounded-lg shadow-2xl max-w-sm w-full"
@@ -107,8 +110,8 @@ const SubmitReviewPage = ({ onNewReview }) => {
           type="submit"
           className="w-full bg-teal-600 text-white py-2 px-4 rounded-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-600"
         >
-          {/* <Link type="/reviews">Submit review</Link> */}
-          Submit Reviews
+        {/* <Link type="/reviews">Submit review</Link> */}
+        Submit Reviews
         </button>
 
         <Link

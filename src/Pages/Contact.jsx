@@ -21,16 +21,16 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission, e.g., save the data or send it to an API
+    
     console.log("Form data submitted:", formData);
-    // Clear form
+    
     setFormData({ name: "", phone: "", email: "", message: "" });
   };
 
   const navigate = useNavigate();
 
   return (
-    <div className="w-full h-full min-h-screen flex justify-center">
+    <div className="w-screen h-full min-h-screen flex justify-center">
       <div className="bg-teal-600 rounded-lg shadow-lg p-6 w-full max-w-4xl mx-4">
         <h2 className="text-white text-3xl font-bold mb-6 text-center">
           Contact Us

@@ -33,15 +33,15 @@ const TestimonialPage = () => {
   }, []);
 
   const handleDelete = (indexToDelete) => {
-    // Create a new array excluding the review at indexToDelete
+    
     const updatedTestimonials = testimonials.filter(
       (_, index) => index !== indexToDelete
     );
 
-    // Update state
+    
     setTestimonials(updatedTestimonials);
 
-    // Update local storage
+
     const updatedLocalReviews = updatedTestimonials.slice(defaultTestimonials.length); // Only save the ones added by users
     localStorage.setItem("reviews", JSON.stringify(updatedLocalReviews));
   };
@@ -61,7 +61,7 @@ const TestimonialPage = () => {
           >
             <div className="flex items-center mb-4">
               <img
-                src={testimonial.image || ""} // Use a default image if needed
+                src={testimonial.image || ""}
                 alt={testimonial.name}
                 className="w-12 h-12 rounded-full object-cover mr-4"
               />

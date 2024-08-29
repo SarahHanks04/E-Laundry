@@ -107,7 +107,7 @@ const ContactForm = () => {
               </span>
             </div>
           </div>
-          <div className="w-full">
+          {/* <div className="w-full">
             <label
               htmlFor="message"
               className="block text-white font-medium mb-2"
@@ -124,7 +124,7 @@ const ContactForm = () => {
               required
               className="w-full px-4 py-2 bg-white text-gray-700 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-600"
             ></textarea>
-          </div>
+          </div> */}
           <div className="flex justify-center">
             <button
               type="submit"

@@ -33,7 +33,7 @@ const Navbar = () => {
       </div>
 
       {/* Main Navbar */}
-      <main className="bg-navy px-6 flex justify-center items-center">
+      <main className="bg-navy px-6 flex justify-between items-center">
         {/* Main Items Container */}
         <div className=" hidden md:flex items-center space-x-10">
           {/* Home Link */}

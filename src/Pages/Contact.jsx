@@ -30,8 +30,8 @@ const ContactForm = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="w-screen h-full min-h-screen flex justify-center">
-      <div className="bg-teal-600 rounded-lg shadow-lg p-6 w-full max-w-4xl mx-4">
+    <div className="w-screen flex justify-center">
+      <div className="bg-teal-600 rounded-lg shadow-lg p-6 w-full max-w-3xl flex flex-col flex-1 min-height-100vh">
         <h2 className="text-white text-3xl font-bold mb-6 text-center">
           Contact Us
         </h2>
@@ -142,10 +142,10 @@ const ContactForm = () => {
             </div>
           </div>
         </form>
-        <div className="text-center text-[8px]">
+        <div className="text-center text-xs md:text-[8px]">
           <button
             onClick={() => navigate("/")}
-            className="mt-6 md:mt-8 bg-blue-950 text-white px-2 md:px-6 md:py-2 rounded-full"
+            className="mt-6 md:mt-8 bg-blue-950 text-white px-4 md:px-6 md:py-2 rounded-full"
           >
             Go Back To Home
           </button>

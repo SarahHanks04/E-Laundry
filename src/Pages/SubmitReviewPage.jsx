@@ -97,12 +97,12 @@ const SubmitReviewPage = ({ onNewReview }) => {
           </Link>
         </button>
       </form>
-      {/* <Link
+      <Link
         to="/"
         className="block text-center text-teal-600 font-serif text-sm mt-10 hover:underline"
       >
         Go Back to Home
-      </Link> */}
+      </Link>
     </section>
   );
 };

@@ -26,14 +26,14 @@ const Navbar = () => {
   }
 
   return (
-    <nav>
+    <nav className="w-full fixed top-0 z-10 bg-white shadow-md">
       {/* Top Bar */}
       <div className="text-white bg-blue-950 py-2 hidden md:block">
         <p className="text-center">+66 94 691 6668</p>
       </div>
 
       {/* Main Navbar */}
-      <main className="bg-navy px-6 flex justify-between items-center">
+      <main className="bg-navy px-6 flex justify-center items-center w-full">
         {/* Main Items Container */}
         <div className=" hidden md:flex items-center space-x-10">
           {/* Home Link */}
@@ -101,7 +101,7 @@ const Navbar = () => {
         {/* Mobile Toggle Button */}
 
         {/* Logo */}
-        <div className="flex justify-between">
+        <div className="flex justify-between w-full md:w-auto">
           <img
             src={LaundryLogo}
             alt="Laundry logo"
@@ -131,7 +131,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-navy px-6 pb-4">
+        <div className="md:hidden bg-navy px-6 pb-4 w-full">
           <ul className="space-y-4">
             <li>
               <NavLink

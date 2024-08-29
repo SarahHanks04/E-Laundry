@@ -33,7 +33,6 @@ const SubmitReviewPage = ({ onNewReview }) => {
     setRatings(0);
   };
 
-  
   return (
     <section className=" flex justify-center items-center min-h-screen bg-teal-50 p-6">
       <form
@@ -55,7 +54,7 @@ const SubmitReviewPage = ({ onNewReview }) => {
             required
           />
         </div>
-        
+
         <div className="mb-4">
           <label
             htmlFor="review"
@@ -72,7 +71,10 @@ const SubmitReviewPage = ({ onNewReview }) => {
           />
         </div>
         <div className="mb-6">
-          <label htmlFor="ratings" className="block text-gray-700 mb-2">
+          <label
+            htmlFor="ratings"
+            className="block text-gray-700 mb-2 font-bold"
+          >
             Ratings
           </label>
           <div className="flex">
@@ -80,6 +82,7 @@ const SubmitReviewPage = ({ onNewReview }) => {
               <FontAwesomeIcon
                 key={i}
                 icon={faStar}
+                size="xs"
                 className={`cursor-pointer text-2xl ${
                   i < ratings ? "text-yellow-400" : "text-gray-400"
                 }`}
@@ -88,21 +91,21 @@ const SubmitReviewPage = ({ onNewReview }) => {
             ))}
           </div>
         </div>
-        <button>
-          <Link
-            to="/reviews"
-            className="block text-center text-gray-600 font-bold mt-10 hover:underline"
-          >
-            Submit Reviews
-          </Link>
-        </button>
+
+        <Link
+          to="/reviews"
+          className="block text-center text-gray-600 font-bold mt-10 hover:underline"
+        >
+          Submit Reviews
+        </Link>
+
+        <Link
+          to="/"
+          className="block text-center text-red-400 font-serif text-sm mt-10 hover:underline"
+        >
+          Go Back to Home
+        </Link>
       </form>
-      <Link
-        to="/"
-        className="block text-center text-teal-600 font-serif text-sm mt-10 hover:underline"
-      >
-        Go Back to Home
-      </Link>
     </section>
   );
 };

@@ -1,12 +1,14 @@
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 const SubmitReviewPage = ({ onNewReview }) => {
   const [name, setName] = useState("");
   const [ratings, setRatings] = useState(0);
   const [review, setReview] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,6 +33,9 @@ const SubmitReviewPage = ({ onNewReview }) => {
     setName("");
     setReview("");
     setRatings(0);
+
+    // Navigate to the reviews page after form submission
+    navigate("/reviews");
   };
 
   return (
@@ -92,12 +97,18 @@ const SubmitReviewPage = ({ onNewReview }) => {
           </div>
         </div>
 
-        <Link
+        {/* <Link
           to="/reviews"
           className="block text-center text-gray-600 font-bold mt-10 hover:underline"
         >
           Submit Reviews
-        </Link>
+        </Link> */}
+        <button
+          type="submit"
+          className="w-full bg-teal-600 text-white py-2 px-4 rounded-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-600"
+        >
+          <Link type="/reviews">Submit review</Link>
+        </button>
 
         <Link
           to="/"

@@ -83,12 +83,12 @@ const TestimonialPage = () => {
             </div>
             <p className="review text-gray-700 text-sm">{testimonial.review}</p>
             {/* DELETE BUTTON */}
-            {/* <button
+            <button
               className="absolute top-2 right-2 text-red-500 hover:text-red-700"
               onClick={() => handleDelete(index)}
             >
               <FontAwesomeIcon icon={faTrash} />
-            </button> */}
+            </button>
           </div>
         ))}
       </main>

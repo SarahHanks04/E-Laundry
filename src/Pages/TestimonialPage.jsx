@@ -115,8 +115,8 @@ import { faStar, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import face2 from "../assets/face2 - Copy.jpg"; // Replace with your actual path
-import face15 from "../assets/face15.jpg"; // Replace with your actual path
+import face2 from "../assets/face2 - Copy.jpg";
+import face15 from "../assets/face15.jpg";
 
 const TestimonialPage = () => {
   const defaultTestimonials = [

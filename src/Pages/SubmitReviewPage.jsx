@@ -1,18 +1,12 @@
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const SubmitReviewPage = ({ onNewReview }) => {
   const [name, setName] = useState("");
   const [ratings, setRatings] = useState(0);
   const [review, setReview] = useState("");
-
-  useEffect(() => {
-    // Load saved reviews from localStorage when the component mounts
-    const savedReviews = JSON.parse(localStorage.getItem("reviews")) || [];
-    onNewReview(savedReviews);
-  }, [onNewReview]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,36 +16,24 @@ const SubmitReviewPage = ({ onNewReview }) => {
       return;
     }
 
-    // const newReview = {
-    //   name,
-    //   ratings: parseInt(ratings, 10),
-    //   review,
-    // };
     const newReview = {
       name,
       review,
       ratings,
     };
 
-    // Save the new review to localStorage
     const savedReviews = JSON.parse(localStorage.getItem("reviews")) || [];
     savedReviews.push(newReview);
     localStorage.setItem("reviews", JSON.stringify(savedReviews));
 
-    // Send the new review to the parent component
     onNewReview(newReview);
 
-    // Clear the form
     setName("");
     setReview("");
     setRatings(0);
   };
-  // Save to localStorage
-  //     const savedReviews = JSON.parse(localStorage.getItem("reviews")) || [];
-  //     savedReviews.push(newReview);
-  //     localStorage.setItem("reviews", JSON.stringify(savedReviews));
-  //   };
 
+  
   return (
     <section className=" flex justify-center items-center min-h-screen bg-teal-50 p-6">
       <form
@@ -73,22 +55,7 @@ const SubmitReviewPage = ({ onNewReview }) => {
             required
           />
         </div>
-        {/* <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
-            Rating
-          </label>
-          <select
-            value={ratings}
-            onChange={(e) => setRatings(e.target.value)}
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal-600"
-          >
-            {[...Array(5)].map((_, i) => (
-              <option key={i + 1} value={i + 1}>
-                {i + 1}
-              </option>
-            ))}
-          </select>
-        </div> */}
+        
         <div className="mb-4">
           <label
             htmlFor="review"

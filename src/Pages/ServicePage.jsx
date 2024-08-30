@@ -50,7 +50,7 @@ const ServicePage = () => {
   };
 
   return (
-    <div className="relative flex flex-col items-center p-6">
+    <div className="relative flex flex-col items-center p-6 mt-24">
       <h1 className="text-3xl font-bold mb-4 flex items-center sm:text-3xl">
         Our Services
       </h1>

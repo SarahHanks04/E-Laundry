@@ -30,7 +30,7 @@ const ContactForm = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="w-screen flex justify-center">
+    <section className="w-screen flex justify-center mt-24">
       <div className="bg-teal-600 rounded-lg shadow-lg p-6 w-full max-w-3xl flex flex-col flex-1 min-height-100vh">
         <h2 className="text-white text-3xl font-bold mb-6 text-center">
           Contact Us
@@ -151,7 +151,7 @@ const ContactForm = () => {
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

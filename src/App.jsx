@@ -11,13 +11,15 @@ import Service from "./Pages/Services";
 import ContactForm from "./Pages/Contact";
 import TestimonialPage from "./Pages/TestimonialPage";
 import SubmitReviewPage from "./Pages/SubmitReviewPage";
+import Layout from "./Component/Layout";
 
 function App() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
-        <Route path="/" element={<Hero />} />
+        <Route path="/" element={<Layout />} />
+        <Route index element={<Hero />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicePage />} />
         <Route path="/service" element={<Service />} />

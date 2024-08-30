@@ -40,7 +40,7 @@ const ContactForm = () => {
             <div className="w-full">
               <label
                 htmlFor="name"
-                className="block text-white font-medium mb-2"
+                className="block text-left ml-4 text-white font-medium mb-2"
               >
                 Name
               </label>
@@ -63,7 +63,7 @@ const ContactForm = () => {
             <div className="w-full">
               <label
                 htmlFor="phone"
-                className="block text-white font-medium mb-2"
+                className="block text-left ml-4 text-white font-medium mb-2"
               >
                 Phone
               </label>
@@ -87,7 +87,7 @@ const ContactForm = () => {
           <div className="w-full">
             <label
               htmlFor="email"
-              className="block text-white font-medium mb-2"
+              className="block text-left ml-4 text-white font-medium mb-2"
             >
               Email
             </label>
@@ -110,7 +110,7 @@ const ContactForm = () => {
           <div className="w-full">
             <label
               htmlFor="message"
-              className="block text-white font-medium mb-2"
+              className="block text-left ml-4 text-white font-medium mb-2"
             >
               Your Message
             </label>

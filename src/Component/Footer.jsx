@@ -1,6 +1,7 @@
 import React from "react";
 import LaundryLogo from "../assets/LaundryLogo.png";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = () => {
   return (
@@ -89,7 +90,7 @@ const Footer = () => {
 
           <ul className="md:text-[14px] text-[18px] font-light">
             <Link to="/" className="hover:underline hover:text-teal-600 pt-3">
-              {/* <span></span> */}
+              <span><FontAwesomeIcon icon={faFace} /></span>
             </Link>
             <Link
               to="/service"

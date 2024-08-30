@@ -42,7 +42,7 @@ const SubmitReviewPage = ({ onNewReview }) => {
   };
 
   return (
-    <section className="w-screen flex justify-center items-center min-h-screen bg-teal-50">
+    <section className="w-screen flex justify-center items-center min-h-screen bg-teal-50 mt-8">
       <form
         onSubmit={handleSubmit}
         className="bg-white p-6 rounded-lg shadow-2xl max-w-sm w-full"

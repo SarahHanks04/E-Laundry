@@ -47,7 +47,7 @@ const TestimonialPage = () => {
   };
 
   return (
-    <section className="min-h-screen bg-teal-50 p-4 overflow-x-hidden">
+    <section className="min-h-screen bg-teal-50 p-4 overflow-x-hidden mt-20">
       <div className="relative text-center text-lg font-medium mt-4">
         <h1>
           What our <br /> Customers Say

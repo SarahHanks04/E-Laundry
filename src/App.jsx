@@ -15,15 +15,16 @@ import Layout from "./Component/Layout";
 function App() {
   return (
     <>
-      <Layout />
       <Routes>
-        <Route path="/" element={<Hero />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/services" element={<ServicePage />} />
-        <Route path="/service" element={<Service />} />
-        <Route path="/contact-form" element={<ContactForm />} />
-        <Route path="/reviews" element={<TestimonialPage />} />
-        <Route path="/submit-review" element={<SubmitReviewPage />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Hero />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/services" element={<ServicePage />} />
+          <Route path="/service" element={<Service />} />
+          <Route path="/contact-form" element={<ContactForm />} />
+          <Route path="/reviews" element={<TestimonialPage />} />
+          <Route path="/submit-review" element={<SubmitReviewPage />} />
+        </Route>
       </Routes>
     </>
   );

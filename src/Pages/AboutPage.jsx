@@ -9,7 +9,7 @@ import {
 
 const AboutPage = () => {
   return (
-    <section className="py-8 px-6">
+    <section className="py-8 px-6 mt-24">
       <div className="text-center mb-10">
         <h1 className="text-4xl font-bold text-navy mb-4">
           Welcome to <br /> 

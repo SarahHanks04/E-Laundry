@@ -2,6 +2,7 @@ import React from "react";
 import LaundryLogo from "../assets/LaundryLogo.png";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebookF, faInstagram, faTiktok, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
@@ -90,31 +91,25 @@ const Footer = () => {
 
           <ul className="md:text-[14px] text-[18px] font-light">
             <Link to="/" className="hover:underline hover:text-teal-600 pt-3">
-              <span><FontAwesomeIcon icon={faFace} /></span>
+              <span><FontAwesomeIcon icon={faFacebookF} /></span>
             </Link>
             <Link
               to="/service"
               className="hover:underline hover:text-teal-600 pt-3"
             >
-              Services
+              <span><FontAwesomeIcon icon= {faInstagram} /></span>
             </Link>
             <Link
               to="/reviews"
               className="hover:underline hover:text-teal-600 pt-3"
             >
-              Reviews
+              <span><FontAwesomeIcon icon= {faTwitter} /></span>
             </Link>
             <Link
               to="/prices"
               className="hover:underline hover:text-teal-600 pt-3"
             >
-              Prices
-            </Link>
-            <Link
-              to="/bookings"
-              className="hover:underline hover:text-teal-600 pt-3"
-            >
-              Booking
+              <span><FontAwesomeIcon icon={faTiktok} /></span>
             </Link>
           </ul>
         </div>

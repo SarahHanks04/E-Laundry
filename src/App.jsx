@@ -2,9 +2,8 @@ import { useState } from "react";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import "./Styles/Style.css";
-import { Route, Router, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Hero from "./Component/Hero";
-import Navbar from "./Component/Header";
 import AboutPage from "./Pages/AboutPage";
 import ServicePage from "./Pages/ServicePage";
 import Service from "./Pages/Services";
@@ -16,10 +15,9 @@ import Layout from "./Component/Layout";
 function App() {
   return (
     <>
-      {/* <Navbar /> */}
+      <Layout />
       <Routes>
-        <Route path="/" element={<Layout />} />
-        <Route index element={<Hero />} />
+        <Route path="/" element={<Hero />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicePage />} />
         <Route path="/service" element={<Service />} />

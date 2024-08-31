@@ -4,9 +4,9 @@ import { NavLink } from "react-router-dom";
 import Service1 from "../assets/Service1 (2).png";
 import Service2 from "../assets/Service2 (2).png";
 import Service3 from "../assets/Service3.png";
-import { FaNairaSign } from "react-icons/fa6";
 
-const PriceCart = ({ itemCount }) => {
+
+const PriceCart = () => {
   const [cartItems, setCartItems] = useState([]);
 
   // Example products
@@ -81,7 +81,7 @@ const PriceCart = ({ itemCount }) => {
       </div>
 
       {/* Cart items list (optional) */}
-      <div className="mt-8">
+      {/* <div className="mt-8">
         <h2 className="text-xl font-bold mb-4">Cart Items:</h2>
         {cartItems.length === 0 ? (
           <p>No items in the cart</p>
@@ -94,7 +94,7 @@ const PriceCart = ({ itemCount }) => {
             ))}
           </ul>
         )}
-      </div>
+      </div> */}
     </div>
   );
 };

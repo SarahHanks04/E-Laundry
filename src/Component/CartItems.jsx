@@ -15,13 +15,13 @@ const CartItems = ({ cartItems }) => {
             {cartItems.map((item, index) => (
               <li key={index} className="mb-4 flex justify-between items-center">
                 <span>{item.name}</span>
-                <span>{item.price} AED</span>
+                <span>{item.price} </span>
               </li>
             ))}
           </ul>
 
           <div className="mt-8 text-xl font-bold">
-            Total: {totalPrice} AED
+            Total: {totalPrice} 
           </div>
         </div>
       )}

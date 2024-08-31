@@ -5,7 +5,6 @@ import Service1 from "../assets/Service1 (2).png";
 import Service2 from "../assets/Service2 (2).png";
 import Service3 from "../assets/Service3.png";
 
-
 const PriceCart = () => {
   const [cartItems, setCartItems] = useState([]);
 
@@ -37,14 +36,6 @@ const PriceCart = () => {
 
   return (
     <div className="cart-page-container p-8 bg-gray-50 mt-[5rem]">
-      {/* <NavLink to="/cart-details" className="relative">
-        <FaShoppingCart size={24} />
-        {itemCount > 0 && (
-          <span className="absolute top-0 right-0 bg-red-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-            {itemCount}
-          </span>
-        )}
-      </NavLink> */}
       <header className="flex justify-between items-center mb-8">
         <h1 className="text-3xl font-bold mx-auto">Services & Prices</h1>
         <NavLink to="/cart-items" className="relative">
@@ -79,22 +70,6 @@ const PriceCart = () => {
           </div>
         ))}
       </div>
-
-      {/* Cart items list (optional) */}
-      {/* <div className="mt-8">
-        <h2 className="text-xl font-bold mb-4">Cart Items:</h2>
-        {cartItems.length === 0 ? (
-          <p>No items in the cart</p>
-        ) : (
-          <ul>
-            {cartItems.map((item, index) => (
-              <li key={index} className="mb-4">
-                {item.name} - {item.price}
-              </li>
-            ))}
-          </ul>
-        )}
-      </div> */}
     </div>
   );
 };

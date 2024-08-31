@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import Service1 from "../assets/Service1 (2).png";
 import Service2 from "../assets/Service2 (2).png";
 import Service3 from "../assets/Service3.png";
+import CartItems from "./CartItems";
 
 const PriceCart = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -70,6 +71,7 @@ const PriceCart = () => {
           </div>
         ))}
       </div>
+      <Route path="/cart-items" element={<CartItems cartItems={cartItems} />}  />
     </div>
   );
 };

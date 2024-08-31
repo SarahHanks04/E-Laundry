@@ -12,6 +12,8 @@ import Layout from "./Component/Layout";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import PricesPage from "./Pages/PricesPage";
+import PriceCart from "./Component/PriceCart";
 
 function App() {
   useEffect(() => {
@@ -33,6 +35,8 @@ function App() {
           <Route path="/contact-form" element={<ContactForm />} />
           <Route path="/reviews" element={<TestimonialPage />} />
           <Route path="/submit-review" element={<SubmitReviewPage />} />
+          <Route path="/prices" element={<PricesPage />} />
+          <Route path="/price-cart" element={<PriceCart />} />
         </Route>
       </Routes>
     </>

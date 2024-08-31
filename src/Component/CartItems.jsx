@@ -4,7 +4,7 @@ const CartItems = ({ cartItems }) => {
   const totalPrice = cartItems.reduce((acc, item) => acc + item.price, 0);
 
   return (
-    <div className="cart-details-page-container p-8 bg-gray-50">
+    <div className="cart-details-page-container p-8 bg-gray-50 mt-[5rem]">
       <h1 className="text-2xl font-bold mb-8">Your Cart</h1>
 
       {cartItems.length === 0 ? (

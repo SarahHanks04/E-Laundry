@@ -15,7 +15,7 @@ const Footer = () => {
   // ENDS
 
   return (
-    <footer className="bg-[#13162D] py-8 px-4 md:px-10">
+    <footer className="bg-[#13162D] py-8 px-4 md:px-10 text-white">
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* COLUMN ONE */}
         <div className="text-center sm:text-left">
@@ -29,16 +29,16 @@ const Footer = () => {
         {/* COLUMN TWO */}
         <div className="text-center sm:text-left">
           <h3 className="font-bold mb-4 text-lg">Menu</h3>
-          <ul className="space-y-2">
+          <ul className="space-y-2 text-sm">
             <li>
-              <Link to="/" className="hover:underline hover:text-teal-600">
+              <Link to="/" className="text-white hover:underline hover:text-teal-600">
                 Home
               </Link>
             </li>
             <li>
               <Link
-                to="/service"
-                className="hover:underline hover:text-teal-600"
+                to="/services"
+                className="text-white hover:underline hover:text-teal-600"
               >
                 Services
               </Link>
@@ -46,7 +46,7 @@ const Footer = () => {
             <li>
               <Link
                 to="/reviews"
-                className="hover:underline hover:text-teal-600"
+                className="text-white hover:underline hover:text-teal-600"
               >
                 Reviews
               </Link>
@@ -54,7 +54,7 @@ const Footer = () => {
             <li>
               <Link
                 to="/prices"
-                className="hover:underline hover:text-teal-600"
+                className="text-white hover:underline hover:text-teal-600"
               >
                 Prices
               </Link>
@@ -62,7 +62,7 @@ const Footer = () => {
             <li>
               <Link
                 to="/bookings"
-                className="hover:underline hover:text-teal-600"
+                className="text-white hover:underline hover:text-teal-600"
               >
                 Booking
               </Link>
@@ -73,19 +73,19 @@ const Footer = () => {
         {/* COLUMN THREE */}
         <div className="text-center sm:text-left">
           <h3 className="font-bold mb-4 text-lg">Customer</h3>
-          <ul className="space-y-2">
+          <ul className="space-y-2 text-sm">
             <li>
               <Link
                 to="/contact-form"
-                className="hover:underline hover:text-teal-600"
+                className="text-white hover:underline hover:text-teal-600"
               >
                 Contact Us
               </Link>
             </li>
             <li>
               <Link
-                to="/service"
-                className="hover:underline hover:text-teal-600"
+                to="/services"
+                className="text-white hover:underline hover:text-teal-600"
               >
                 Terms & Conditions
               </Link>
@@ -93,7 +93,7 @@ const Footer = () => {
             <li>
               <Link
                 to="/reviews"
-                className="hover:underline hover:text-teal-600"
+                className="text-white hover:underline hover:text-teal-600"
               >
                 Privacy Policy
               </Link>
@@ -105,16 +105,28 @@ const Footer = () => {
         <div className="text-center sm:text-left">
           <h3 className="font-bold mb-4 text-lg">Social Media</h3>
           <div className="flex justify-center sm:justify-start space-x-4">
-            <a href="/" className="hover:text-teal-600">
+            <a
+              href="/"
+              className="w-8 h-8 flex items-center justify-center bg-white text-[#13162D] rounded-full hover:bg-teal-600 hover:text-white transition duration-300"
+            >
               <FontAwesomeIcon icon={faFacebookF} />
             </a>
-            <a href="/" className="hover:text-teal-600">
+            <a
+              href="/"
+              className="w-8 h-8 flex items-center justify-center bg-white text-[#13162D] rounded-full hover:bg-teal-600 hover:text-white transition duration-300"
+            >
               <FontAwesomeIcon icon={faInstagram} />
             </a>
-            <a href="/" className="hover:text-teal-600">
+            <a
+              href="/"
+              className="w-8 h-8 flex items-center justify-center bg-white text-[#13162D] rounded-full hover:bg-teal-600 hover:text-white transition duration-300"
+            >
               <FontAwesomeIcon icon={faXTwitter} />
             </a>
-            <a href="/" className="hover:text-teal-600">
+            <a
+              href="/"
+              className="w-8 h-8 flex items-center justify-center bg-white text-[#13162D] rounded-full hover:bg-teal-600 hover:text-white transition duration-300"
+            >
               <FontAwesomeIcon icon={faTiktok} />
             </a>
           </div>
@@ -123,11 +135,10 @@ const Footer = () => {
 
       {/* COPYRIGHT */}
       <div className="w-full h-[1px] bg-white mt-11 mb-6"></div>
-      
-      <div className="text-center mt-8 text-sm">
-        <p>Copyright &copy; {currentYear} | THAT LAUNDRY SHOP THAILAND.</p>
-      </div>
 
+      <div className="text-center mt-8 text-sm">
+        <p>&copy; Copyright {currentYear} | THAT LAUNDRY SHOP THAILAND.</p>
+      </div>
     </footer>
   );
 };

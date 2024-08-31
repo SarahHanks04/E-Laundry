@@ -2,118 +2,132 @@ import React from "react";
 import LaundryLogo from "../assets/LaundryLogo.png";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookF, faInstagram, faTiktok, faTwitter, faXTwitter } from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebookF,
+  faInstagram,
+  faTiktok,
+  faXTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
-  return (
-    <footer className="bg-[#13162D] min-h-screen text-white py-10 px-10">
-      <main className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
-        {/* COLUMN ONE */}
-        <div className="col-span-1">
-          <img
-            src={LaundryLogo}
-            alt="logo"
-            // width={145}
-            // height={44}
-            className="mb-2"
-          />
-          <div>
-            <p>
-              We have been dedicated to providing topnotch laundry services in
-              Bangkok.
-            </p>
-          </div>
-        </div>
-        {/* COLUMN TWO */}
-        <div className="col-span-1">
-          <h3 className="font-bold mb-6 font-gothic">Menu</h3>
+  // FOR COPYRIGHT AT THE FOOTER MAIN
+  const currentYear = new Date().getFullYear();
+  // ENDS
 
-          <ul className="md:text-[14px] text-[18px] font-light">
-            <Link to="/" className="hover:underline hover:text-teal-600 pt-3">
-              Home
-            </Link>
-            <Link
-              to="/service"
-              className="hover:underline hover:text-teal-600 pt-3"
-            >
-              Services
-            </Link>
-            <Link
-              to="/reviews"
-              className="hover:underline hover:text-teal-600 pt-3"
-            >
-              Reviews
-            </Link>
-            <Link
-              to="/prices"
-              className="hover:underline hover:text-teal-600 pt-3"
-            >
-              Prices
-            </Link>
-            <Link
-              to="/bookings"
-              className="hover:underline hover:text-teal-600 pt-3"
-            >
-              Booking
-            </Link>
+  return (
+    <footer className="bg-[#13162D] py-8 px-4 md:px-10">
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* COLUMN ONE */}
+        <div className="text-center sm:text-left">
+          <img src={LaundryLogo} alt="logo" className="mx-auto sm:mx-0 mb-4" />
+          <p className="text-sm leading-6">
+            We have been dedicated to providing top-notch laundry services in
+            Bangkok.
+          </p>
+        </div>
+
+        {/* COLUMN TWO */}
+        <div className="text-center sm:text-left">
+          <h3 className="font-bold mb-4 text-lg">Menu</h3>
+          <ul className="space-y-2">
+            <li>
+              <Link to="/" className="hover:underline hover:text-teal-600">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/service"
+                className="hover:underline hover:text-teal-600"
+              >
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/reviews"
+                className="hover:underline hover:text-teal-600"
+              >
+                Reviews
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/prices"
+                className="hover:underline hover:text-teal-600"
+              >
+                Prices
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/bookings"
+                className="hover:underline hover:text-teal-600"
+              >
+                Booking
+              </Link>
+            </li>
           </ul>
         </div>
 
         {/* COLUMN THREE */}
-        <div className="col-span-1">
-          <h3 className="font-bold mb-6 font-gothic">Customer</h3>
-
-          <ul className="md:text-[14px] text-[18px] font-light">
-            <Link
-              to="/contact-form"
-              className="hover:underline hover:text-teal-600 pt-3"
-            >
-              Contact Us
-            </Link>
-            <Link
-              to="/service"
-              className="hover:underline hover:text-teal-600 pt-3"
-            >
-              Terms & Conditions
-            </Link>
-            <Link
-              to="/reviews"
-              className="hover:underline hover:text-teal-600 pt-3"
-            >
-              Privacy Policy
-            </Link>
+        <div className="text-center sm:text-left">
+          <h3 className="font-bold mb-4 text-lg">Customer</h3>
+          <ul className="space-y-2">
+            <li>
+              <Link
+                to="/contact-form"
+                className="hover:underline hover:text-teal-600"
+              >
+                Contact Us
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/service"
+                className="hover:underline hover:text-teal-600"
+              >
+                Terms & Conditions
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/reviews"
+                className="hover:underline hover:text-teal-600"
+              >
+                Privacy Policy
+              </Link>
+            </li>
           </ul>
         </div>
 
         {/* COLUMN FOUR */}
-        <div className="col-span-1 flex flex-col justify-between">
-          <h3 className="mb-6">Social Media</h3>
-
-          <ul className="flex flex-col md:flex-row justify-between gap-5">
-            <Link to="/" className="hover:underline hover:text-teal-600 pt-3">
-              <span><FontAwesomeIcon icon={faFacebookF} /></span>
-            </Link>
-            <Link
-              to="/service"
-              className="hover:underline hover:text-teal-600 pt-3"
-            >
-              <span><FontAwesomeIcon icon= {faInstagram} /></span>
-            </Link>
-            <Link
-              to="/reviews"
-              className="hover:underline hover:text-teal-600 pt-3"
-            >
-              <span><FontAwesomeIcon icon= {faXTwitter} /></span>
-            </Link>
-            <Link
-              to="/prices"
-              className="hover:underline hover:text-teal-600 pt-3"
-            >
-              <span><FontAwesomeIcon icon={faTiktok} /></span>
-            </Link>
-          </ul>
+        <div className="text-center sm:text-left">
+          <h3 className="font-bold mb-4 text-lg">Social Media</h3>
+          <div className="flex justify-center sm:justify-start space-x-4">
+            <a href="/" className="hover:text-teal-600">
+              <FontAwesomeIcon icon={faFacebookF} />
+            </a>
+            <a href="/" className="hover:text-teal-600">
+              <FontAwesomeIcon icon={faInstagram} />
+            </a>
+            <a href="/" className="hover:text-teal-600">
+              <FontAwesomeIcon icon={faXTwitter} />
+            </a>
+            <a href="/" className="hover:text-teal-600">
+              <FontAwesomeIcon icon={faTiktok} />
+            </a>
+          </div>
         </div>
-      </main>
+      </div>
+
+      {/* COPYRIGHT */}
+      <div className="w-full h-[1px] bg-white mt-11 mb-6"></div>
+      
+      <div className="text-center mt-8 text-sm">
+        <p>Copyright &copy; {currentYear} | THAT LAUNDRY SHOP THAILAND.</p>
+      </div>
+
     </footer>
   );
 };

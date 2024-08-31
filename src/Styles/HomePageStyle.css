@@ -1,3 +1,13 @@
+.homepage-container {
+  margin-top: 80px; /* Adjust this value according to your navbar height */
+}
+
+@media (max-width: 768px) {
+  .homepage-container {
+    margin-top: 0; /* Remove margin for mobile view */
+  }
+}
+
 /* HomePage container animation */
 @keyframes fadeIn {
   from {

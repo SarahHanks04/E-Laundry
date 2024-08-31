@@ -12,14 +12,14 @@ const Navbar = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
 
   if (isLoading) {
     return (
-      <div className="loading-container fixed top-0 left-0 w-full h-full flex justify-center items-center min-h-screen bg-white">
+      <div className="loading-container fixed top-0 left-0 w-full h-full z-[9999] flex justify-center items-center min-h-screen bg-white">
         <img src={LoadingImage} alt="Loading..." className="loading-image" />
       </div>
     );

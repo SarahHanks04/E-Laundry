@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Service = () => {
   const navigate = useNavigate();
   return (
-    <div className="homepage-container flex flex-col md:flex-row items-center p-4 md:p-8 bg-white">
+    <div className="homepage-container flex flex-col md:flex-row items-center p-4 md:p-8 bg-white mt-[5rem]">
       <div className="image-container w-full md:w-1/2 flex justify-center mt-4 md:mt-0">
         <img
           src={Service3}

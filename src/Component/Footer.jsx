@@ -16,7 +16,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-[#13162D] py-8 px-4 md:px-10 text-white">
-      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" data-aos="fade-up" data-aos-delay="200">
         {/* COLUMN ONE */}
         <div className="text-center sm:text-left">
           <img src={LaundryLogo} alt="logo" className="mx-auto sm:mx-0 mb-4" />

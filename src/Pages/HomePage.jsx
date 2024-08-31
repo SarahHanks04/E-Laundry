@@ -5,18 +5,19 @@ import Button from "./Buttton";
 import HeroImage from "../assets/HeroImage.png";
 import "../Styles/HomepageStyle.css";
 
-
 const HomePage = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 2000, // Animation duration (in milliseconds)
-      once: false, // Animation occurs only once when scrolling down
-    });
-  }, []);
+  // useEffect(() => {
+  //   AOS.init({
+  //     duration: 1000, // Duration of the animation
+  //     offset: 100, // Offset (in pixels) from the original trigger point
+  //     easing: "ease-in-out", // Easing function for the animation
+  //     once: true, // Whether animation should happen only once - while scrolling down
+  //   });
+  // }, []);
 
   return (
     <div className="homepage-container flex flex-col md:flex-row items-center p-8 bg-green-100 mt-[5.1rem] pt-8 pb-20">
-      <div className="md:w-1/2 pl-8 text-start" data-aos="fade-right">
+      <div className="md:w-1/2 pl-8 text-start" data-aos="fade-up">
         <h1 className="text-4xl font-bold text-navy">
           Your <br /> <span> Professional</span>
         </h1>
@@ -27,7 +28,11 @@ const HomePage = () => {
           They handle your garments with the utmost care and attention, ensuring
           thorough Cleaning, Ironing, and Folding.
         </p>
-        <div className="mt-10 flex space-x-4" data-aos="zoom-in">
+        <div
+          className="mt-10 flex space-x-4"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
           <Button
             text="Book Now"
             className="button bg-blue-950 text-white px-6 py-2 rounded-full"
@@ -40,7 +45,8 @@ const HomePage = () => {
       </div>
       <div
         className="image-container md:w-1/2 flex justify-center mt-8 md:mt-0"
-        data-aos="fade-left"
+        data-aos="fade-up "
+        data-aos-delay="400"
       >
         <img
           src={HeroImage}

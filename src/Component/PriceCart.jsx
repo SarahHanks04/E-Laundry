@@ -6,7 +6,7 @@ import Service2 from "../assets/Service2 (2).png";
 import Service3 from "../assets/Service3.png";
 import { FaNairaSign } from "react-icons/fa6";
 
-const PriceCart = () => {
+const PriceCart = ({ itemCount }) => {
   const [cartItems, setCartItems] = useState([]);
 
   // Example products
@@ -36,13 +36,21 @@ const PriceCart = () => {
   };
 
   return (
-    <div className="cart-page-container p-8 bg-gray-50">
+    <div className="cart-page-container p-8 bg-gray-50 mt-[5rem]">
+      {/* <NavLink to="/cart-details" className="relative">
+        <FaShoppingCart size={24} />
+        {itemCount > 0 && (
+          <span className="absolute top-0 right-0 bg-red-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+            {itemCount}
+          </span>
+        )}
+      </NavLink> */}
       <header className="flex justify-between items-center mb-8">
-        <h1 className="text-2xl font-bold">Services</h1>
+        <h1 className="text-2xl font-bold mx-auto">Services</h1>
         <NavLink to="/cart" className="relative">
-          <FaShoppingCart size={50} />
+          <FaShoppingCart size={24} className="text-orange-300" />
           {cartItems.length > 0 && (
-            <span className="absolute top-0 right-0 bg-red-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+            <span className="absolute top-0 right-0 bg-red-600 text-white text-xs rounded-full h-3 w-3 flex items-center justify-center">
               {cartItems.length}
             </span>
           )}
@@ -92,3 +100,15 @@ const PriceCart = () => {
 };
 
 export default PriceCart;
+
+// import React from "react";
+// import { FaShoppingCart } from "react-icons/fa";
+// import { NavLink } from "react-router-dom";
+
+// const PriceCart = ({ itemCount }) => {
+//   return (
+
+//   );
+// };
+
+// export default PriceCart;

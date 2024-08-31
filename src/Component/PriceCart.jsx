@@ -71,7 +71,7 @@ const PriceCart = () => {
           </div>
         ))}
       </div>
-      <Route path="/cart-items" element={<CartItems cartItems={cartItems} />}  />
+      
     </div>
   );
 };

@@ -7,7 +7,7 @@ import "../Styles/HomepageStyle.css";
 const HomePage = () => {
   
   return (
-    <div className="homepage-container flex flex-col md:flex-row items-center p-8 bg-green-100 mt-16">
+    <div className="homepage-container flex flex-col md:flex-row items-center p-8 bg-green-100 mt-[5.1rem] pt-8 pb-20">
       <div className="md:w-1/2">
         <h1 className="text-4xl font-bold text-navy">
           Your <span> Professional</span>
@@ -34,7 +34,7 @@ const HomePage = () => {
         <img
           src={HeroImage}
           alt="Friendly Laundromat"
-          width={450}
+          width={430}
           height={200}
           className="max-w-full rounded-lg shadow-lg"
         />

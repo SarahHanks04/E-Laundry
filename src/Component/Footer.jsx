@@ -26,7 +26,7 @@ const Footer = () => {
         </div>
         {/* COLUMN TWO */}
         <div className="col-span-1">
-          <h1 className="font-bold mb-6 font-gothic">Menu</h1>
+          <h3 className="font-bold mb-6 font-gothic">Menu</h3>
 
           <ul className="md:text-[14px] text-[18px] font-light">
             <Link to="/" className="hover:underline hover:text-teal-600 pt-3">
@@ -61,7 +61,7 @@ const Footer = () => {
 
         {/* COLUMN THREE */}
         <div className="col-span-1">
-          <h1 className="font-bold mb-6 font-gothic">Customer</h1>
+          <h3 className="font-bold mb-6 font-gothic">Customer</h3>
 
           <ul className="md:text-[14px] text-[18px] font-light">
             <Link
@@ -86,10 +86,10 @@ const Footer = () => {
         </div>
 
         {/* COLUMN FOUR */}
-        <div className="col-span-1">
-          <h1 className="font-bold mb-6 font-gothic">Social Media</h1>
+        <div className="col-span-1 flex flex-col justify-between">
+          <h3 className="mb-6">Social Media</h3>
 
-          <ul className="md:text-[14px] text-[18px] font-light">
+          <ul className="flex flex-col md:flex-row justify-between gap-5">
             <Link to="/" className="hover:underline hover:text-teal-600 pt-3">
               <span><FontAwesomeIcon icon={faFacebookF} /></span>
             </Link>

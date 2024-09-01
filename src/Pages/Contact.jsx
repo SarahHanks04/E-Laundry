@@ -195,7 +195,7 @@ const ContactForm = () => {
         <h2 className="text-white text-3xl font-bold mb-6 text-center">
           Contact Us
         </h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="form space-y-4 max-w-xl">
           <div className="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 md:space-x-4">
             <div className="w-full">
               <label

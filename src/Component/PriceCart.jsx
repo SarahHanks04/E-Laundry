@@ -17,7 +17,6 @@ const PriceCart = ({ cartItems, setCartItems }) => {
         }
         const data = await response.json();
 
-        // Flatten all products from all carts into a single array
         const allProducts = data.carts.flatMap((cart) => cart.products);
 
         setProducts(allProducts);

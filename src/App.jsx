@@ -15,8 +15,11 @@ import { useEffect } from "react";
 import PricesPage from "./Pages/PricesPage";
 import PriceCart from "./Component/PriceCart";
 import CartItems from "./Component/CartItems";
+import { useState } from "react";
 
 function App() {
+  const [cartItems, setCartItems] = useState([]);
+
   useEffect(() => {
     AOS.init({
       duration: 1000, // Animation duration
@@ -37,7 +40,7 @@ function App() {
           <Route path="/reviews" element={<TestimonialPage />} />
           <Route path="/submit-review" element={<SubmitReviewPage />} />
           <Route path="/prices" element={<PricesPage />} />
-          <Route path="/price-cart" element={<PriceCart />} />
+          <Route path="/price-cart" element={<PriceCart cartItems={cartItems} setCartItems={setCartItems} />} />
           <Route path="/cart-items" element={<CartItems cartItems={cartItems} />} />
         </Route>
       </Routes>

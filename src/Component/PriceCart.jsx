@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import Service1 from "../assets/Service1 (2).png";
@@ -6,28 +6,27 @@ import Service2 from "../assets/Service2 (2).png";
 import Service3 from "../assets/Service3.png";
 import CartItems from "./CartItems";
 
-const PriceCart = () => {
-  const [cartItems, setCartItems] = useState([]);
-
+const PriceCart = ({ cartItems, setCartItems }) => {
+  
   // Example products
   const products = [
     {
       id: 1,
       image: Service1,
       name: "Wash & Iron Service",
-      price: "3,500",
+      price: 3500,
     },
     {
       id: 2,
       image: Service2,
       name: "Dry Cleaning Service",
-      price: "7,000",
+      price: 7000,
     },
     {
       id: 3,
       image: Service3,
       name: "Laundry Service",
-      price: "5,000",
+      price: 5000,
     },
   ];
 

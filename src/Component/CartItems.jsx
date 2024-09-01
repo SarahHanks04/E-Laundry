@@ -34,7 +34,7 @@
 import React from "react";
 
 const CartItems = ({ cartItems }) => {
-    if (!cartItems) return <div>No cart items</div>;
+    // if (!cartItems) return <div>No cart items</div>;
   const totalPrice = cartItems.reduce(
     (acc, item) => acc + parseFloat(item.price.replace(/,/g, "")),
     0

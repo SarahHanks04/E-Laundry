@@ -246,11 +246,11 @@ import { FaShoppingCart } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
 const PriceCart = ({ cartItems, setCartItems }) => {
-  const [products, setProducts] = useState([]); // State to store products fetched from API
-  const [loading, setLoading] = useState(true); // State to track loading status
-  const [error, setError] = useState(null); // State to track errors
+  const [products, setProducts] = useState([]); 
+  const [loading, setLoading] = useState(true); 
+  const [error, setError] = useState(null);
 
-  // Fetch products from the API when the component mounts
+  
   useEffect(() => {
     const fetchProducts = async () => {
       try {

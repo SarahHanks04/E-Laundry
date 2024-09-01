@@ -2,7 +2,6 @@ import React from "react";
 import { FaDeleteLeft } from "react-icons/fa6";
 
 const CartItems = ({ cartItems, setCartItems }) => {
-  // ...
 
   const removeItem = (itemIndex) => {
     setCartItems(cartItems.filter((item, index) => index !== itemIndex));

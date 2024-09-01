@@ -41,7 +41,7 @@ function App() {
           <Route path="/submit-review" element={<SubmitReviewPage />} />
           <Route path="/prices" element={<PricesPage />} />
           <Route path="/price-cart" element={<PriceCart cartItems={cartItems} setCartItems={setCartItems} />} />
-          <Route path="/cart-items" element={<CartItems cartItems={cartItems} />} />
+          <Route path="/cart-items" element={<CartItems cartItems={cartItems} setCartItems={setCartItems} />} />
         </Route>
       </Routes>
     </>

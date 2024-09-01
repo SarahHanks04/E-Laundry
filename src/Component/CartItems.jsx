@@ -1,38 +1,45 @@
 const CartItems = ({ cartItems, setCartItems }) => {
-    // ...
-  
-    const removeItem = (itemIndex) => {
-      setCartItems(cartItems.filter((item, index) => index !== itemIndex));
-    };
-  
-    return (
-      <div className="cart-details-page-container p-8 bg-gray-50 mt-[5rem]">
-        <h1 className="text-2xl font-bold mb-8">Your Cart</h1>
-  
-        {cartItems.length === 0 ? (
-          <p>Your cart is empty.</p>
-        ) : (
-          <div>
-            <ul>
-              {cartItems.map((item, index) => (
-                <li key={index} className="mb-4 flex justify-between items-center">
-                  <span>{item.name}</span>
-                  <span>&#8358; {item.price} </span>
-                  <button onClick={() => removeItem(index)}>Remove</button>
-                </li>
-              ))}
-            </ul>
-  
-            <div className="mt-8 text-xl font-bold">
-              Total: &#8358; {cartItems.reduce((acc, item) => acc + parseFloat(item.price.replace(/,/g, '')), 0).toLocaleString()}
-            </div>
-          </div>
-        )}
-      </div>
-    );
+  // ...
+
+  const removeItem = (itemIndex) => {
+    setCartItems(cartItems.filter((item, index) => index !== itemIndex));
   };
 
+  return (
+    <div className="cart-details-page-container p-8 bg-gray-50 mt-[5rem]">
+      <h1 className="text-2xl font-bold mb-8">Your Cart</h1>
 
+      {cartItems.length === 0 ? (
+        <p>Your cart is empty.</p>
+      ) : (
+        <div>
+          <ul>
+            {cartItems.map((item, index) => (
+              <li
+                key={index}
+                className="mb-4 flex justify-between items-center"
+              >
+                <span>{item.name}</span>
+                <span>&#8358; {item.price} </span>
+                <button onClick={() => removeItem(index)}>Remove</button>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-8 text-xl font-bold">
+            Total: &#8358;{" "}
+            {cartItems
+              .reduce(
+                (acc, item) => acc + parseFloat(item.price.replace(/,/g, "")),
+                0
+              )
+              .toLocaleString()}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
 
 // import React from "react";
 

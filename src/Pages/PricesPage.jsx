@@ -65,7 +65,7 @@ const PricesPage = () => {
             />
 
             <h3 className="text-xl font-semibold text-navy">{price.title}</h3>
-            <p className="mt-2 text-gray-600">{price.description} <strong>2AED.</strong></p>
+            <p className="mt-2 text-gray-600">{price.description} <strong>&#8358; 2,000</strong></p>
           </div>
         ))}
       </div>

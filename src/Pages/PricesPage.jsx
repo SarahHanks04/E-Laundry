@@ -1,15 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import HeroImage from "../assets/HeroImage.png";
-import Service1 from "../assets/Service1 (2).png";
-import Service2 from "../assets/Service2 (2).png";
-import Service3 from "../assets/Service3.png";
+import PricesHero from "../assets/PricesHero.jpg";
+import RoundNeck from "../assets/RoundNeck.png";
+import Jeans from "../assets/Jeans.png";
+import Shirt from "../assets/Shirt.png";
 
 const PricesPage = () => {
   const priceCards = [
     {
       id: 1,
-      image: Service1,
+      image: RoundNeck,
       title: "Wash & Iron Service",
       description:
         "These items are already cleaned, Ironing only price from",
@@ -17,7 +17,7 @@ const PricesPage = () => {
     },
     {
       id: 2,
-      image: Service2,
+      image: Jeans,
       title: "Wash & Iron Service",
       description:
         "These items are already cleaned, Ironing only price from",
@@ -25,7 +25,7 @@ const PricesPage = () => {
     },
     {
       id: 3,
-      image: Service3,
+      image: Shirt,
       title: "Wash & Iron Service",
       description:
         "These items are already cleaned, Ironing only price from",
@@ -38,10 +38,10 @@ const PricesPage = () => {
       <div className="text-align mb-8">
         <div className="mb-4">
           <img
-            src={HeroImage}
+            src={PricesHero}
             alt="Special Offer"
-            width={120}
-            className="rounded-full border-4 mx-auto"
+            width={150}
+            className="rounded-full border-4 mx-auto w-[10rem] h-[10rem]"
           />
         </div>
         <p className="text-lg text-black">
@@ -65,7 +65,7 @@ const PricesPage = () => {
             />
 
             <h3 className="text-xl font-semibold text-navy">{price.title}</h3>
-            <p className="mt-2 text-gray-600">{price.description} <strong>&#8358; 2,000</strong></p>
+            <p className="mt-2 text-gray-600">{price.description} <strong>&#8358; 2,000.</strong></p>
           </div>
         ))}
       </div>

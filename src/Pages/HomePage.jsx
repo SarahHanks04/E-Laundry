@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Button from "./Buttton";
@@ -35,10 +35,12 @@ const HomePage = () => {
         >
           <Button
             text="Book Now"
+            to="/booking"
             className="button bg-blue-950 text-white px-6 py-2 rounded-full"
           />
           <Button
             text="Schedule Time"
+            to="/schedule"
             className="button schedule-button text-black px-6 py-2 rounded-full border-2 border-blue-950"
           />
         </div>

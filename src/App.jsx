@@ -16,9 +16,16 @@ import PricesPage from "./Pages/PricesPage";
 import PriceCart from "./Component/PriceCart";
 import CartItems from "./Component/CartItems";
 import { useState } from "react";
+import BookingsPage from "./Pages/BookingsPage";
+import PaymentPage from "./Pages/SchedulePage";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
+
+  const handlePaymentSuccess = () => {
+    // Handle payment success logic here
+    console.log("Payment successful!");
+  };
 
   useEffect(() => {
     AOS.init({
@@ -40,8 +47,30 @@ function App() {
           <Route path="/reviews" element={<TestimonialPage />} />
           <Route path="/submit-review" element={<SubmitReviewPage />} />
           <Route path="/prices" element={<PricesPage />} />
-          <Route path="/price-cart" element={<PriceCart cartItems={cartItems} setCartItems={setCartItems} />} />
-          <Route path="/cart-items" element={<CartItems cartItems={cartItems} setCartItems={setCartItems} />} />
+          <Route
+            path="/price-cart"
+            element={
+              <PriceCart cartItems={cartItems} setCartItems={setCartItems} />
+            }
+          />
+          <Route
+            path="/cart-items"
+            element={
+              <CartItems cartItems={cartItems} setCartItems={setCartItems} />
+            }
+          />
+          <Route
+            path="/booking"
+            element={
+              <BookingsPage /> }
+          />
+          <Route path="*" element={<PaymentPage bookingDetails={{
+                  selectedService: {
+                    name: "Washing",
+                    price: 10,
+                  },
+                }}
+                handlePaymentSuccess={handlePaymentSuccess} />} />
         </Route>
       </Routes>
     </>

@@ -78,7 +78,7 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to="/booking"
+                to="/bookings"
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
                   isActive ? "text-red-700 font-bold" : "text-black"

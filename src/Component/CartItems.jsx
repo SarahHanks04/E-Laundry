@@ -1,3 +1,5 @@
+import React from "react";
+
 const CartItems = ({ cartItems, setCartItems }) => {
   // ...
 
@@ -40,6 +42,8 @@ const CartItems = ({ cartItems, setCartItems }) => {
     </div>
   );
 };
+
+export default CartItems;
 
 // import React from "react";
 

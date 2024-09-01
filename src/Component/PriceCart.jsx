@@ -14,19 +14,19 @@ const PriceCart = ({ cartItems, setCartItems }) => {
       id: 1,
       image: Service1,
       name: "Wash & Iron Service",
-      price: 3500,
+      price: "3,500",
     },
     {
       id: 2,
       image: Service2,
       name: "Dry Cleaning Service",
-      price: 7000,
+      price: "7,000",
     },
     {
       id: 3,
       image: Service3,
       name: "Laundry Service",
-      price: 5000,
+      price: "5,000",
     },
   ];
 

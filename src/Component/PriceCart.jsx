@@ -309,12 +309,11 @@ const PriceCart = ({ cartItems, setCartItems }) => {
             className="p-4 rounded-lg shadow-lg bg-white text-center"
           >
             <img
-              src={product.thumbnail || "default-image-url"} // Using a placeholder if the thumbnail is missing
+              src={product.thumbnail}
               alt={product.title}
-              className="mx-auto mb-4 w-40 h-40 object-cover" // Adjusted image size
+              className="mx-auto mb-4 w-40 h-40 object-cover"
             />
             <h3 className="text-lg font-semibold text-navy">{product.title}</h3>{" "}
-            {/* Displaying product title */}
             <p className="mt-2 text-gray-600">Price: &#8358; {product.price}</p>
             <button
               onClick={() => addToCart(product)}

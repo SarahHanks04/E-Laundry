@@ -1,5 +1,4 @@
 import React from "react";
-import { FaRemoveFormat } from "react-icons/fa";
 import { FaDeleteLeft } from "react-icons/fa6";
 
 const CartItems = ({ cartItems, setCartItems }) => {
@@ -25,7 +24,7 @@ const CartItems = ({ cartItems, setCartItems }) => {
               >
                 <span>{item.name}</span>
                 <span>&#8358; {item.price} </span>
-                <button onClick={() => removeItem(index)}><FaRemoveFormat /></button>
+                <button onClick={() => removeItem(index)}><FaDeleteLeft className="text-red-600" /></button>
               </li>
             ))}
           </ul>

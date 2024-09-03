@@ -6,6 +6,20 @@ const PriceCart = ({ cartItems, setCartItems }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const productsPerPage = 8; // Number of products per page
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = products.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
+  const totalPages = Math.ceil(products.length / productsPerPage);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -39,6 +53,7 @@ const PriceCart = ({ cartItems, setCartItems }) => {
     );
   }
 
+  
   return (
     <div
       className="cart-page-container p-8 bg-gray-50 mt-[5rem]"
@@ -56,7 +71,7 @@ const PriceCart = ({ cartItems, setCartItems }) => {
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {products.map((product, index) => (
+        {currentProducts.map((product, index) => (
           <div
             key={product.id || `${product.id}-${index}`}
             className="p-4 rounded-lg shadow-lg bg-white text-center"
@@ -79,8 +94,26 @@ const PriceCart = ({ cartItems, setCartItems }) => {
           </div>
         ))}
       </div>
+
+      <div className="pagination mt-8 flex justify-center">
+        {[...Array(totalPages).keys()].map((number) => (
+          <button
+            key={number + 1}
+            onClick={() => handlePageChange(number + 1)}
+            className={`mx-1 px-4 py-2 ${
+              currentPage === number + 1
+                ? "bg-blue-950 text-white"
+                : "bg-gray-200 text-gray-700"
+            } rounded-full`}
+          >
+            {number + 1}
+          </button>
+        ))}
+      </div>
     </div>
   );
+
+
 };
 
 export default PriceCart;

@@ -1,0 +1,30 @@
+/* .inner-cursor,
+.outer-cursor {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.1s ease;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.inner-cursor {
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  transform: translate(-50%, -50%);
+}
+
+.outer-cursor {
+  width: 32px;
+  height: 32px;
+  border: 1px solid white;
+  background-color: transparent;
+  transform: translate(-50%, -50%);
+}
+
+a:hover ~ .inner-cursor {
+  transform: scale(1.5);
+  background-color: #ff0000;
+}
+ */

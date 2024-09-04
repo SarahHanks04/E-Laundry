@@ -1,5 +1,6 @@
 import "./App.css";
 import "./Styles/Style.css";
+import "./Styles/Cursor.css";
 import { Route, Routes } from "react-router-dom";
 import Hero from "./Component/Hero";
 import AboutPage from "./Pages/AboutPage";
@@ -18,6 +19,7 @@ import CartItems from "./Component/CartItems";
 import { useState } from "react";
 import BookingsPage from "./Pages/BookingsPage";
 import PaymentPage from "./Pages/SchedulePage";
+import gsap from "gsap";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -27,6 +29,7 @@ function App() {
     console.log("Payment successful!");
   };
 
+    // FOR AOS TRANSITION
   useEffect(() => {
     AOS.init({
       duration: 1000, // Animation duration
@@ -35,8 +38,40 @@ function App() {
       once: false, // Whether animation should happen only once
     });
   }, []);
+
+  // FOR CURSOR
+  // useEffect(() => {
+  //   const innerCursor = document.querySelector(".inner-cursor");
+  //   const outerCursor = document.querySelector(".outer-cursor");
+
+  //   document.addEventListener("mousemove", (e) => {
+  //     const { clientX: x, clientY: y } = e;
+  //     innerCursor.style.transform = `translate(${x}px, ${y}px)`;
+  //     outerCursor.style.transform = `translate(${x}px, ${y}px)`;
+  //   });
+
+  //   document.addEventListener("scroll", () => {
+  //     // Optional: Adjust cursor movement on scroll if needed
+  //   });
+  // }, []);
+
+  // useEffect(() => {
+  //   const innerCursor = document.querySelector(".inner-cursor");
+  //   const outerCursor = document.querySelector(".outer-cursor");
+
+  //   document.addEventListener("mousemove", (e) => {
+  //     const { clientX: x, clientY: y } = e;
+  //     gsap.to(innerCursor, { x, y, duration: 0.1 });
+  //     gsap.to(outerCursor, { x, y, duration: 0.3 });
+  //   });
+  // }, []);
+
   return (
     <>
+      {/* <div className="outer-cursor"></div>
+      <div className="inner-cursor"></div> */}
+
+
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Hero />} />
@@ -59,18 +94,21 @@ function App() {
               <CartItems cartItems={cartItems} setCartItems={setCartItems} />
             }
           />
+          <Route path="/booking" element={<BookingsPage />} />
           <Route
-            path="/booking"
+            path="*"
             element={
-              <BookingsPage /> }
-          />
-          <Route path="*" element={<PaymentPage bookingDetails={{
+              <PaymentPage
+                bookingDetails={{
                   selectedService: {
                     name: "Washing",
                     price: 10,
                   },
                 }}
-                handlePaymentSuccess={handlePaymentSuccess} />} />
+                handlePaymentSuccess={handlePaymentSuccess}
+              />
+            }
+          />
         </Route>
       </Routes>
     </>

@@ -29,7 +29,7 @@ function App() {
     console.log("Payment successful!");
   };
 
-    // FOR AOS TRANSITION
+  // FOR AOS TRANSITION
   useEffect(() => {
     AOS.init({
       duration: 1000, // Animation duration
@@ -70,7 +70,6 @@ function App() {
     <>
       {/* <div className="outer-cursor"></div>
       <div className="inner-cursor"></div> */}
-
 
       <Routes>
         <Route path="/" element={<Layout />}>

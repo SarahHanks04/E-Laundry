@@ -294,6 +294,7 @@
 // PriceCart.jsx
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import CartIcon from "./CartIcon";
 
 const PriceCart = ({ cartItems, setCartItems }) => {
   const [products, setProducts] = useState([]);
@@ -431,12 +432,13 @@ const PriceCart = ({ cartItems, setCartItems }) => {
           </svg>
         </div>
 
-        <NavLink to="/cart-items" className="relative">
+        {/* <NavLink to="/cart-items" className="relative">
           <span className="text-2xl sm:text-3xl">🛒</span>
           <span className="absolute top-0 right-0 bg-red-600 text-white text-xs sm:text-sm rounded-full h-5 sm:h-6 w-5 sm:w-6 flex items-center justify-center">
             {cartItems.reduce((acc, item) => acc + item.quantity, 0)}
           </span>
-        </NavLink>
+        </NavLink> */}
+        <CartIcon cartCount={cartItems.reduce((acc, item) => acc + item.quantity, 0)} />
       </header>
 
       {filteredProducts.length === 0 ? (

@@ -62,6 +62,7 @@ const PriceCart = ({ cartItems, setCartItems }) => {
     >
       <header className="flex justify-between items-center mb-8">
         <h1 className="text-3xl font-bold mx-auto">Services & Prices</h1>
+        <input type="text" name="search" id="search" />
         <NavLink to="/cart-items" className="relative">
           <span className="text-[24px]"> &#x1F6D2;</span>
           <span className="absolute top-0 right-0 bg-red-600 text-white text-xs rounded-full h-3 w-3 flex items-center justify-center">

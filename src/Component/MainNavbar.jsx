@@ -16,6 +16,7 @@ const MainNavbar = ({ isOpen, setIsOpen }) => {
         >
           Home
         </NavLink>
+        
         <NavLink
           to="/services"
           className={({ isActive }) =>

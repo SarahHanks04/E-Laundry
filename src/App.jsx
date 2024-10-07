@@ -20,6 +20,7 @@ import { useState } from "react";
 import BookingsPage from "./Pages/BookingsPage";
 import PaymentPage from "./Pages/SchedulePage";
 import gsap from "gsap";
+import Checkout from "./Component/CheckOut";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -108,6 +109,7 @@ function App() {
               />
             }
           />
+          <Route path="/checkout" element={<Checkout cartItems={cartItems} />} />
         </Route>
       </Routes>
     </>

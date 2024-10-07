@@ -119,8 +119,10 @@
 
 // export default PriceCart;
 
+// // PriceCart.jsx
 // import React, { useState, useEffect } from "react";
 // import { NavLink } from "react-router-dom";
+// import CartIcon from "./CartIcon";
 
 // const PriceCart = ({ cartItems, setCartItems }) => {
 //   const [products, setProducts] = useState([]);
@@ -130,6 +132,28 @@
 //   const [currentPage, setCurrentPage] = useState(1);
 //   const productsPerPage = 8; // Number of products per page
 //   const [searchTerm, setSearchTerm] = useState(""); // Search term state
+
+//   // Load cart items from localStorage on mount
+//   useEffect(() => {
+//     const savedCart = localStorage.getItem("cartItems");
+//     if (savedCart) {
+//       try {
+//         const parsedCart = JSON.parse(savedCart).map((item) => ({
+//           ...item,
+//           quantity: item.quantity || 1, // Ensure quantity is at least 1
+//         }));
+//         setCartItems(parsedCart);
+//       } catch (e) {
+//         console.error("Failed to parse cart items from localStorage:", e);
+//         setCartItems([]);
+//       }
+//     }
+//   }, [setCartItems]);
+
+//   // Save cart items to localStorage whenever they change
+//   useEffect(() => {
+//     localStorage.setItem("cartItems", JSON.stringify(cartItems));
+//   }, [cartItems]);
 
 //   // Filtered products based on search term
 //   const filteredProducts = products.filter((product) =>
@@ -169,7 +193,21 @@
 //   }, []);
 
 //   const addToCart = (product) => {
-//     setCartItems([...cartItems, product]);
+//     const existingItemIndex = cartItems.findIndex(
+//       (item) => item.id === product.id
+//     );
+//     if (existingItemIndex !== -1) {
+//       // Item already in cart, increase quantity
+//       const updatedCart = cartItems.map((item, index) =>
+//         index === existingItemIndex
+//           ? { ...item, quantity: item.quantity + 1 }
+//           : item
+//       );
+//       setCartItems(updatedCart);
+//     } else {
+//       // Add new item with quantity 1
+//       setCartItems([...cartItems, { ...product, quantity: 1 }]);
+//     }
 //   };
 
 //   if (loading) {
@@ -182,7 +220,7 @@
 
 //   return (
 //     <div
-//       className="cart-page-container p-4 sm:p-8 bg-gray-50 mt-20"
+//       className="cart-page-container p-4 sm:p-8 bg-gray-50 mt-20 min-h-screen"
 //       data-aos="fade-up"
 //       data-aos-delay="300"
 //     >
@@ -222,12 +260,13 @@
 //           </svg>
 //         </div>
 
-//         <NavLink to="/cart-items" className="relative">
+//         {/* <NavLink to="/cart-items" className="relative">
 //           <span className="text-2xl sm:text-3xl">🛒</span>
-//           <span className="absolute top-0 right-0 bg-red-600 text-white text-xs sm:text-sm rounded-full h-3 sm:h-4 w-3 sm:w-4 flex items-center justify-center">
-//             {cartItems.length}
+//           <span className="absolute top-0 right-0 bg-red-600 text-white text-xs sm:text-sm rounded-full h-5 sm:h-6 w-5 sm:w-6 flex items-center justify-center">
+//             {cartItems.reduce((acc, item) => acc + item.quantity, 0)}
 //           </span>
-//         </NavLink>
+//         </NavLink> */}
+//         <CartIcon cartCount={cartItems.reduce((acc, item) => acc + item.quantity, 0)} />
 //       </header>
 
 //       {filteredProducts.length === 0 ? (
@@ -240,7 +279,7 @@
 //             {currentProducts.map((product, index) => (
 //               <div
 //                 key={product.id || `${product.id}-${index}`}
-//                 className="p-4 rounded-lg shadow-lg bg-white text-center"
+//                 className="p-4 rounded-lg shadow-lg bg-white text-center flex flex-col"
 //                 data-aos="fade-up"
 //                 data-aos-delay="200"
 //               >
@@ -255,7 +294,7 @@
 //                 <p className="mt-2 text-gray-600">Price: ₦ {product.price}</p>
 //                 <button
 //                   onClick={() => addToCart(product)}
-//                   className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full transition duration-200"
+//                   className="mt-auto bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full transition duration-200"
 //                 >
 //                   Add to Cart
 //                 </button>
@@ -293,8 +332,12 @@
 
 // PriceCart.jsx
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
-import CartIcon from "./CartIcon";
+// import { NavLink } from "react-router-dom";
+import CartIcon from "./CartIcon"; // Import the CartIcon component
+import Modal from "react-modal"; // Import react-modal
+
+// Set the app element for accessibility
+Modal.setAppElement("#root");
 
 const PriceCart = ({ cartItems, setCartItems }) => {
   const [products, setProducts] = useState([]);
@@ -415,7 +458,7 @@ const PriceCart = ({ cartItems, setCartItems }) => {
             }}
             className="w-full pl-4 pr-10 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          {/* Optional: Add a search icon inside the input */}
+          {/* Search Icon */}
           <svg
             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5"
             xmlns="http://www.w3.org/2000/svg"
@@ -432,13 +475,10 @@ const PriceCart = ({ cartItems, setCartItems }) => {
           </svg>
         </div>
 
-        {/* <NavLink to="/cart-items" className="relative">
-          <span className="text-2xl sm:text-3xl">🛒</span>
-          <span className="absolute top-0 right-0 bg-red-600 text-white text-xs sm:text-sm rounded-full h-5 sm:h-6 w-5 sm:w-6 flex items-center justify-center">
-            {cartItems.reduce((acc, item) => acc + item.quantity, 0)}
-          </span>
-        </NavLink> */}
-        <CartIcon cartCount={cartItems.reduce((acc, item) => acc + item.quantity, 0)} />
+        {/* Cart Icon */}
+        <CartIcon
+          cartCount={cartItems.reduce((acc, item) => acc + item.quantity, 0)}
+        />
       </header>
 
       {filteredProducts.length === 0 ? (
@@ -496,6 +536,7 @@ const PriceCart = ({ cartItems, setCartItems }) => {
           )}
         </>
       )}
+
     </div>
   );
 };

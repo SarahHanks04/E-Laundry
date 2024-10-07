@@ -13,7 +13,7 @@ const Checkout = ({ cartItems, setCartItems }) => {
     // Implement payment logic here
     toast.success("Payment Successful!");
     setCartItems([]); // Clear cart after payment
-    navigate("/price-cart"); // Redirect to PriceCart
+    navigate("/*"); // Redirect to PriceCart
   };
 
   return (

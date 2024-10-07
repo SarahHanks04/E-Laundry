@@ -224,7 +224,7 @@ const PriceCart = ({ cartItems, setCartItems }) => {
 
         <NavLink to="/cart-items" className="relative">
           <span className="text-2xl sm:text-3xl">🛒</span>
-          <span className="absolute top-0 right-0 bg-red-600 text-white text-xs sm:text-sm rounded-full h-5 sm:h-6 w-5 sm:w-6 flex items-center justify-center">
+          <span className="absolute top-0 right-0 bg-red-600 text-white text-xs sm:text-sm rounded-full h-3 sm:h-4 w-3 sm:w-4 flex items-center justify-center">
             {cartItems.length}
           </span>
         </NavLink>

@@ -25,7 +25,9 @@ const MainNavbar = ({ isOpen, setIsOpen }) => {
         >
           Services
         </NavLink>
+
         <img src={LaundryLogo} alt="Laundry logo" className="h-10 mx-4" />
+
         <NavLink
           to="/about"
           className={({ isActive }) =>
@@ -34,6 +36,7 @@ const MainNavbar = ({ isOpen, setIsOpen }) => {
         >
           About
         </NavLink>
+
         <NavLink
           to="/prices"
           className={({ isActive }) =>
@@ -42,6 +45,7 @@ const MainNavbar = ({ isOpen, setIsOpen }) => {
         >
           Prices
         </NavLink>
+
         <NavLink
           to="/booking"
           className={({ isActive }) =>
@@ -50,6 +54,7 @@ const MainNavbar = ({ isOpen, setIsOpen }) => {
         >
           Booking
         </NavLink>
+
       </div>
       <button
         onClick={() => navigate("/contact-form")}
@@ -57,6 +62,7 @@ const MainNavbar = ({ isOpen, setIsOpen }) => {
       >
         Contact Us
       </button>
+
       <div className="flex justify-between w-full md:w-auto">
         <img
           src={LaundryLogo}
@@ -82,6 +88,7 @@ const MainNavbar = ({ isOpen, setIsOpen }) => {
           </svg>
         </button>
       </div>
+
     </main>
   );
 };

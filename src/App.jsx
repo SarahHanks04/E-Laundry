@@ -109,7 +109,10 @@ function App() {
               />
             }
           />
-          <Route path="/checkout" element={<Checkout cartItems={cartItems} />} />
+          <Route
+            path="/checkout"
+            element={<Checkout cartItems={cartItems} />}
+          />
         </Route>
       </Routes>
     </>
